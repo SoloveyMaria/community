@@ -24,7 +24,7 @@ Link to the notebooks
 
 # Contribution
 
-We welcome contributions from other developers. To contribute to ```community, please fork the repository, make your changes and submit a pull request.
+We welcome contributions from other developers. To contribute to ```community```, please fork the repository, make your changes and submit a pull request.
 
 # Contact
 
