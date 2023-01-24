@@ -11,8 +11,7 @@ devtools::install_github("SoloveyMaria/community")
 To create an environment named 'community', and install Jupyter Notebook with the R kernel as well as devtools, use the command below. 
 If you already have Jupyter Notebook with the R kernel installed, you can skip this step.
 
-```conda create -n myenv -c r -c conda-forge jupyter r-essentials r-irkernel devtools
-```
+```conda create -n myenv -c r -c conda-forge jupyter r-essentials r-irkernel devtools```
 
 # Functionality?
 The Community package includes the following functions:
