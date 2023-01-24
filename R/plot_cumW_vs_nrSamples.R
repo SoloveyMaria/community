@@ -38,7 +38,7 @@ plot_cumW_vs_nrSamples <- function(df
                 )+
                 scale_color_manual(labels = c("FALSE"="failed at least one threshold"
                                               , "TRUE"="passed both thresholds")
-                                   ,values=c("FALSE"="red"
+                                   ,values=c("FALSE"="gray80"
                                              ,"TRUE"="black")
                                    ,guide = guide_legend()
                 )+
@@ -49,7 +49,7 @@ plot_cumW_vs_nrSamples <- function(df
                 )+
                 ggtitle("interactions QC")+
                 geom_vline(xintercept = threshold_log10_cum_weight
-                           , color = "gray80")+
+                           , color = "red")+
                 geom_hline(yintercept = threshold_nr_expr_samples
                            , color = "red")+
                 theme_bw()+
