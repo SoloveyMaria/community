@@ -6,6 +6,12 @@ Community is an R package for analyzing single-cell RNA sequencing data to infer
 # install.packages("devtools")
 devtools::install_github("SoloveyMaria/community")
 ```
+# Tutorial
+
+To create an environment named 'community', and install Jupyter Notebook with the R kernel, use the command below. 
+If you already have Jupyter Notebook with the R kernel installed, you can skip this step.
+
+```conda create -n community -c r -c conda-forge jupyter r-essentials r-irkernel```
 
 # Functionality?
 The Community package includes the following functions:
