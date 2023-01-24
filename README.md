@@ -4,7 +4,7 @@ Community is an R package for analyzing single-cell RNA sequencing data to infer
 # Installation
 ```{r df-drop-ok, class.source="bg-success"}
 # install.packages("devtools")
-devtools::install_github("colomemaria/community")
+devtools::install_github("SoloveyMaria/community")
 ```
 
 # Functionality?
