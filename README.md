@@ -40,7 +40,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 
 You can either visit the link here https://zenodo.org/record/7565938#.Y9FHVxzMJhE and download manually or follow the below commands. The downloaded files should be in the same directory as the notebook. 
 
-```cd community/```
+```cd src/```
 
 ```wget https://zenodo.org/record/7565938/files/anno_cells_corr.txt```
 ```wget https://zenodo.org/record/7565938/files/anno_samples_corr.txt```
