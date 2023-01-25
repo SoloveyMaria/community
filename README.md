@@ -32,7 +32,10 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
     make run-jupyter
     ```
 
-- Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser) or
+- Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser) 
+
+    or
+    
 - Open:
     - [`src/calculate_communication.ipynb` Notebook](http://localhost:8888/notebooks/src/extract_data_from_website.ipynb) to run the demo workflow.
     
