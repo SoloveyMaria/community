@@ -29,7 +29,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 - Launch [Jupyter](https://jupyter.org/) to access the notebooks to generate graphs
 
     ```
-    $ ./run.sh run-jupyter
+    ./run.sh run-jupyter
     ```
 
 - Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser)
