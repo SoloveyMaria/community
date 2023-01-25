@@ -21,7 +21,7 @@ I do not know why the run.sh script is asking for sudo but the issue resolves on
 
     ```chmod +x run.sh```
 
-- Install [conda](https://conda.io/miniconda.html)
+- Install [conda](https://conda.io/miniconda.html), please skip this if you already have conda installed
 
     ```
     ./run.sh install-conda
