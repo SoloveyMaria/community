@@ -31,7 +31,7 @@ create_env() {
 }
 
 run_jupyter() {
-    conda $CONDA_ENV && jupyter notebook
+    source ${ACTIVATE} ${CONDA_ENV} && jupyter notebook
 }
 
 help() {
