@@ -17,6 +17,8 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 
 I do not know why the run.sh script is asking for sudo but the issue resolves once the script is executable. 
 
+- Make run.sh executable
+
 ```chmod +x run.sh```
 
 - Install [conda](https://conda.io/miniconda.html)
