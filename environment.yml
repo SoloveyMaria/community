@@ -4,8 +4,11 @@ channels:
 - bioconda
 - r
 - defaults
+- anaconda
 dependencies:
-- jupyter
+- lxml
+- notebook
+- nb_conda_kernels
 - r-essentials
 - r-irkernel
 - r-devtools
