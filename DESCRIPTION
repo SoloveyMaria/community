@@ -1,11 +1,25 @@
 Package: community
 Title: Infer interactions between cell types
-Version: 1.2.0
+Version: 1.2.1
 Authors@R: 
     person("Maria", "Solovey", , "maria.solovey@bmc.med.lmu.de", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: Community is an R package for analyzing single-cell RNA sequencing data to infer interactions between cell types. The package includes functions for preprocessing and quality control, as well as functions for inferring interactions and for analyzing the inferred interactions.
-License: use_mit_license()
+License: MIT + file LICENSE
+BugReports: https://github.com/SoloveyMaria/community/issues
+Depends: 
+    R (>= 4.0.0)
+biocViews:
+Imports:
+    ggplot2 (>= 3.3.0),
+    gridExtra (>= 2.1),
+    grid,
+    ComplexHeatmap (>= 2.12.0),
+    dendsort (>= 0.4.0),
+    igraph (>= 1.3.0),
+    circlize (>= 0.4.0),
+    R.utils (>= 2.12.0),
+    data.table (>= 1.14.0)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 #RoxygenNote: 7.2.1
