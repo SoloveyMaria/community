@@ -21,7 +21,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
     make install-conda
     ```
 
-- Create the conda environment, named community_tutorial and install all the necessary packages.
+- To create a conda environment named "community_tutorial" and install all necessary packages, use the following command:
 
     ```
     make create-env
