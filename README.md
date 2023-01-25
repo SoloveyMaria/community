@@ -31,7 +31,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 
 - Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser)
 - Open:
-    - [`src/calculate_comminocaton.ipynb` Notebook](http://localhost:8888/notebooks/src/extract_data_from_website.ipynb) to extract information from the website
+    - [`src/calculate_communication.ipynb` Notebook](http://localhost:8888/notebooks/src/extract_data_from_website.ipynb) to extract information from the website
 ## Functionality
 The Community package includes the following functions:
 
