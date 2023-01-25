@@ -18,7 +18,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
     /.run.sh install-conda
     ```
 
-- Create the conda environment
+- Create the conda environment, named community_tutorial and install all the necessary packages.
 
     ```
     /.run.sh create-env
