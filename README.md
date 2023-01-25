@@ -18,18 +18,18 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 - Install [conda](https://conda.io/miniconda.html)
 
     ```
-    /.run.sh install-conda
+    ./run.sh install-conda
     ```
 
 - Create the conda environment, named community_tutorial and install all the necessary packages.
 
     ```
-    /.run.sh create-env
+    ./run.sh create-env
     ```
 - Launch [Jupyter](https://jupyter.org/) to access the notebooks to generate graphs
 
     ```
-    $ /.run.sh run-jupyter
+    $ ./run.sh run-jupyter
     ```
 
 - Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser)
