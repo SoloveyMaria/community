@@ -35,6 +35,18 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 - Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser)
 - Open:
     - [`src/calculate_communication.ipynb` Notebook](http://localhost:8888/notebooks/src/extract_data_from_website.ipynb) to extract information from the website
+    
+### Getting preprocessed data
+
+You can either visit the link here https://zenodo.org/record/7565938#.Y9FHVxzMJhE and download or follow the below. The downloaded files should be in the same directory as the notebook. 
+
+```cd community/```
+
+```wget https://zenodo.org/record/7565938/files/anno_cells_corr.txt```
+```wget https://zenodo.org/record/7565938/files/anno_samples_corr.txt```
+```wget https://zenodo.org/record/7565938/files/counts_corr.csv.gz```
+    
+    
 ## Functionality
 The Community package includes the following functions:
 
