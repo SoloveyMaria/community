@@ -36,7 +36,7 @@ create-env: ## create conda environment
 	fi
 .PHONY: create-env
 
-download-data: ## install Miniconda
+download-data: ## download preprocessed data
 	curl https://zenodo.org/record/7565938/files/anno_cells_corr.txt -o src/anno_cells_corr.txt;
 	curl https://zenodo.org/record/7565938/files/anno_samples_corr.txt -o src/anno_samples_corr.txt;
 	curl https://zenodo.org/record/7565938/files/counts_corr.csv.gz -o src/counts_corr.csv.gz
