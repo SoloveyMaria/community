@@ -8,11 +8,30 @@ devtools::install_github("SoloveyMaria/community")
 ```
 ## Tutorial
 
-To create an environment named 'community', and install Jupyter Notebook with the R kernel as well as devtools, use the command below. 
-If you already have Jupyter Notebook with the R kernel installed, you can skip this step.
+To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, use the command below. 
 
-```conda create -n myenv -c r -c conda-forge jupyter r-essentials r-irkernel r-devtools```
+### Requirements
 
+- Install [conda](https://conda.io/miniconda.html)
+
+    ```
+    /.run.sh install-conda
+    ```
+
+- Create the conda environment
+
+    ```
+    /.run.sh create-env
+    ```
+- Launch [Jupyter](https://jupyter.org/) to access the notebooks to generate graphs
+
+    ```
+    $ /.run.sh run-jupyter
+    ```
+
+- Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser)
+- Open:
+    - [`src/calculate_comminocaton.ipynb` Notebook](http://localhost:8888/notebooks/src/extract_data_from_website.ipynb) to extract information from the website
 ## Functionality
 The Community package includes the following functions:
 
