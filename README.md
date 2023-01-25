@@ -38,9 +38,9 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
     
 ### Getting preprocessed data
 
-You can download the pre-proccessed data to /src folder by running the below command. You can also visit the link here https://zenodo.org/record/7565938#.Y9FHVxzMJhE and download manually. In order to run the notebook workflow with the preproccessed data, the files should be under the /src directory. 
+You can download the preprocessed data to /src folder by running the below command. You can also visit the link here https://zenodo.org/record/7565938#.Y9FHVxzMJhE and download manually. In order to run the notebook workflow with the preprocessed data, the files should be under the /src directory. 
 
-- Download preprocess data into /src directory
+- Download preprocessed data into /src directory
 
     ```
     make download-data
