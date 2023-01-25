@@ -38,7 +38,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
     
 ### Getting preprocessed data
 
-You can either visit the link here https://zenodo.org/record/7565938#.Y9FHVxzMJhE and download or follow the below. The downloaded files should be in the same directory as the notebook. 
+You can either visit the link here https://zenodo.org/record/7565938#.Y9FHVxzMJhE and download manually or follow the below commands. The downloaded files should be in the same directory as the notebook. 
 
 ```cd community/```
 
