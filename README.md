@@ -15,27 +15,21 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 - Clone the repo
     ```git clone https://github.com/SoloveyMaria/community.git``` and then cd into the directory ```cd community/```
 
-I do not know why the run.sh script is asking for sudo but the issue resolves once the script is executable. 
-
-- Make run.sh executable
-
-    ```chmod +x run.sh```
-
 - Install [conda](https://conda.io/miniconda.html), please skip this if you already have conda installed
 
     ```
-    ./run.sh install-conda
+    make install-conda
     ```
 
 - Create the conda environment, named community_tutorial and install all the necessary packages.
 
     ```
-    ./run.sh create-env
+    make create-env
     ```
 - Launch [Jupyter](https://jupyter.org/) to access the notebooks to generate graphs
 
     ```
-    ./run.sh run-jupyter
+    make run-jupyter
     ```
 
 - Go to [http://localhost:8888](http://localhost:8888) (a page should open automatically in your browser)
