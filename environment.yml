@@ -1,0 +1,19 @@
+name: community_tutorial
+channels:
+- conda-forge
+- bioconda
+- r
+- defaults
+dependencies:
+- jupyter
+- r-essentials
+- r-irkernel
+- r-devtools
+- r-ggplot2
+- r-gridextra
+- r-dendsort
+- bioconductor-complexheatmap
+- r-igraph
+- r-circlize
+- r-r.utils
+- r-data.table
