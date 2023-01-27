@@ -15,7 +15,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 - Clone the repo
     ```git clone https://github.com/SoloveyMaria/community.git``` and then cd into the directory ```cd community/```
 
-- Install [conda](https://conda.io/miniconda.html), please skip this if you already have conda installed
+- If you don't have conda installedyet, install [conda](https://conda.io/miniconda.html) by running the command below
 
     ```
     make install-conda
