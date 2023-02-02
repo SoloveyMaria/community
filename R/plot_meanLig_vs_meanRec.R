@@ -2,14 +2,14 @@
 #' 
 #' @description auxillary function for interactions QC: plot log10 mean ligand expression vs log10 mean receptor expression (in controls and cases separately).
 #' 
-#' @param df the df contains following columns: interaction_ID, mean_e_s_l_control, mean_e_s_l_case, mean_e_r_r_control, mean_e_r_r_case.
+#' @param df the df contains following columns: interactions_ID, mean_e_s_l_control, mean_e_s_l_case, mean_e_r_r_control, mean_e_r_r_case.
 #' @param threshold_log10_meanexpr_per_condition numeric: threshold for log10 mean expression per condition. The default values is 0.1.
 #' 
 #' @return plotting function
 #' 
 #' @export
 #' @examples
-#' plot_meanLig_vs_meanRec(df = df$anno_interactions
+#' plot_meanLig_vs_meanRec(df = x$anno_interactions
 #'                        ,threshold_log10_meanexpr_per_condition = threshold_log10_meanexpr_per_condition)
 #' 
 plot_meanLig_vs_meanRec <- function(df,threshold_log10_meanexpr_per_condition = 0.1
@@ -71,21 +71,24 @@ plot_meanLig_vs_meanRec <- function(df,threshold_log10_meanexpr_per_condition = 
                                                       )
                                     )+
                                             geom_point(alpha = 0.5
+                                                       #,show.legend = FALSE
                                             )+
-                                            scale_color_manual(labels = c("FALSE"="failed the threshold in\nboth conditions"
-                                                                          , "TRUE"="passed the threshold in\nat least one condition")
+                                            scale_color_manual(labels = c("FALSE"="failed threshold in\nboth conditions"
+                                                                          , "TRUE"="passed threshold in\nat least one condition")
                                                                ,values=c("FALSE"="gray80"
                                                                          ,"TRUE"="black")
                                                                ,guide = guide_legend()
                                             )+
-                                            scale_shape_manual(labels = c("FALSE"="failed the threshold in\nboth conditions"
-                                                                          , "TRUE"="passed the threshold in\nat least one condition")
+                                            scale_shape_manual(labels = c("FALSE"="failed threshold in\nboth conditions"
+                                                                          , "TRUE"="passed threshold in\nat least one condition")
                                                                ,values=c("FALSE"=16,"TRUE"=1)
                                                                ,guide = guide_legend()
                                             )+
                                             ggtitle(condition)+
                                             ylim(c(0,max_value))+
                                             xlim(c(0,max_value))+
+                                            xlab("receptor in receiving cell type\n[log10 mean expression]")+
+                                            ylab("ligand in sending cell type\n[log10 mean expression]")+
                                             geom_vline(xintercept = threshold_log10_meanexpr_per_condition
                                                        , color = "red")+
                                             geom_hline(yintercept = threshold_log10_meanexpr_per_condition
@@ -95,6 +98,9 @@ plot_meanLig_vs_meanRec <- function(df,threshold_log10_meanexpr_per_condition = 
                                                   ,legend.position="bottom"
                                                   ,legend.title=element_blank()
                                             )
+                                    #guides(color = guide_legend(label.position = "bottom")
+                                    #       ,shape = guide_legend(label.position = "bottom")
+                                    #      )+
                                     
                                     
                                     # x density plot
@@ -141,8 +147,6 @@ plot_meanLig_vs_meanRec <- function(df,threshold_log10_meanexpr_per_condition = 
                                     
                             })
         
-        #print(plot_list)
-        
         grid.arrange(plot_list[[1]][["ydensity"]]
                      ,plot_list[[1]][["QC_plot"]]
                      ,plot_list[[2]][["ydensity"]]
@@ -155,9 +159,9 @@ plot_meanLig_vs_meanRec <- function(df,threshold_log10_meanexpr_per_condition = 
                      ,ncol = 4
                      
                      ,widths=c(2, 6, 2, 6)
-                     ,heights=c(6, 2)
+                     ,heights=c(6.5, 1.5)
                      
-                     ,top=textGrob("Discrepancy Filter"
+                     ,top=textGrob("log10 mean expression in active fraction"
                                    ,gp = gpar(fontsize = 24))
         )
 }

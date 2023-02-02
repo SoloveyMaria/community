@@ -7,7 +7,7 @@
 plot_meanLig_vs_meanRec(df, threshold_log10_meanexpr_per_condition = 0.1)
 }
 \arguments{
-\item{df}{the df contains following columns: interaction_ID, mean_e_s_l_control, mean_e_s_l_case, mean_e_r_r_control, mean_e_r_r_case.}
+\item{df}{the df contains following columns: interactions_ID, mean_e_s_l_control, mean_e_s_l_case, mean_e_r_r_control, mean_e_r_r_case.}
 
 \item{threshold_log10_meanexpr_per_condition}{numeric: threshold for log10 mean expression per condition. The default values is 0.1.}
 }
@@ -18,7 +18,7 @@ plotting function
 auxillary function for interactions QC: plot log10 mean ligand expression vs log10 mean receptor expression (in controls and cases separately).
 }
 \examples{
-plot_meanLig_vs_meanRec(df = df$anno_interactions
+plot_meanLig_vs_meanRec(df = x$anno_interactions
                        ,threshold_log10_meanexpr_per_condition = threshold_log10_meanexpr_per_condition)
 
 }

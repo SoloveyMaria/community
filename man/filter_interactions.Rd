@@ -7,7 +7,7 @@
 filter_interactions(
   comm_result,
   threshold_log10_cum_weight = 0.05,
-  threshold_nr_expr_samples = 2,
+  threshold_frac_samples_per_condition = 0.8,
   threshold_log10_meanexpr_per_condition = 0.1,
   verbose = TRUE
 )
@@ -15,7 +15,7 @@ filter_interactions(
 \arguments{
 \item{threshold_log10_cum_weight}{numeric: the threshold for the log10 cumulative weight of interactions. The default value is 0.05.}
 
-\item{threshold_nr_expr_samples}{numeric: the threshold for the number of samples in which an interaction has a non-zero value. The default value is 2.}
+\item{threshold_frac_samples_per_condition}{numeric: the threshold for the fraction of samples in which an interaction has a non-zero value. The threshold is applied separately for controls and the cases. An interaction passes the filter if it passes this threshold either for the control samples, or for the case samples, or for both. The default value is 0.8.}
 
 \item{threshold_log10_meanexpr_per_condition}{numeric: the threshold for the log10 mean expression per condition. The default value is 0.01.}
 
@@ -28,16 +28,17 @@ comm_results: The dataframe anno_interactions gets following new columns:
 \itemize{
 \item anno_interactions
 -- log10_cum_weight: numeric: the log10 cumulative weight of an interaction
--- nr_expr_samples: numeric: the number of samples in which an interaction has a non-zero value
+-- frac_samples_controls: numeric: the fraction of control samples in which an interaction has a non-zero value
+-- frac_samples_cases: numeric: the fraction of case samples in which an interaction has a non-zero value
 -- passed_log10_cum_weight_filter: a logical value indicating whether an interaction passed the log10_cum_weight filter
--- passed_nr_expr_samples_filter: a logical value indicating whether an interaction passed the nr_expr_samples filter
+-- passed_frac_samples_filter: a logical value indicating whether an interaction passed the frac_samples filter
 -- passed_log10_meanexpr_control_filter: a logical value indicating whether an interaction passed the threshold_log10_meanexpr_per_condition filter in the control samples
 -- passed_log10_meanexpr_case_filter: a logical value indicating whether an interaction passed the threshold_log10_meanexpr_per_condition filter in the case samples
 -- passed_log10_meanexpr_per_condition_filter: a logical value indicating whether an interaction passed the threshold_log10_meanexpr_per_condition filter. An interaction passes this filter if both its ligand and receptor pass the threshold either in control samples or in case samples or in both.
 -- passed_QC_filter: a logical value indicating whether an interaction passed all the QC filters.
 \item thresholds
 -- threshold_log10_cum_weight: numeric: the threshold for the log10 cumulative weight of interactions. The default value is 0.05.
--- threshold_nr_expr_samples: numeric: the threshold for the number of samples in which an interaction has a non-zero value. The default value is 2.
+-- threshold_frac_samples_per_condition: numeric: the threshold for the fraction of samples in which an interaction has a non-zero value. The threshold os applied separately for controls and the cases. The default value is 0.8.
 -- threshold_log10_meanexpr_per_condition: numeric: the threshold for the log10 mean expression per condition. The default value is 0.01.
 }
 }
