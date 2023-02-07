@@ -131,7 +131,10 @@ calculate_communication <- function(counts
                                     ,lrp_database
                                     ,verbose = FALSE){
         
-        
+        #filter lr database
+        lrp_database <- lrp_database[(lrp_database$Ligand %in% rownames(counts)) &
+                                             (lrp_database$Receptor %in% rownames(counts)), ]
+  
         # create annotation for the interactions for each sample
         per_sample_anno_interactions <- create_initial_anno_interactions(anno_samples = anno_samples
                                                                          ,anno_cells = anno_cells
