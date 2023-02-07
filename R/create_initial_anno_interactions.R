@@ -54,11 +54,11 @@ create_initial_anno_interactions <- function(counts
                         #  print(rec)
                         new_interactions <- paste0(send 
                                                    ,":"
-                                                   ,lrp_database$Ligand.ApprovedSymbol 
+                                                   ,lrp_database$Ligand 
                                                    ,"_"
                                                    ,rec
                                                    ,":" 
-                                                   ,lrp_database$Receptor.ApprovedSymbol
+                                                   ,lrp_database$Receptor
                         )
                         
                         interaction_IDs <- c(interaction_IDs
