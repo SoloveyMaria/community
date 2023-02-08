@@ -120,7 +120,7 @@ plot_meanLig_vs_meanRec <- function(df,threshold_log10_meanexpr_per_condition = 
                                     # Create a blank placeholder plot :
                                     blankPlot <- ggplot(data = df
                                                         ,aes(x = log10_cum_weight
-                                                             ,y = nr_expr_samples
+                                                             ,y = log10_cum_weight
                                                         )
                                     )+
                                             geom_jitter(alpha=0) +
