@@ -2,8 +2,9 @@
 #' 
 #' @description tests if an interaction is statistically differential between the cases and the controls.
 #' 
-#' @param comm_result: list containing information about the interactions, samples, and their annotations.
-#' @param which_adjustment method used for multiple testing correction by the p.adjust function. The default is 'fdr'.
+#' @param comm_result list containing information about the interactions, samples, and their annotations.
+#' @param which_test method used for p-value calculation: "wilcoxon" or "t-test". The default value is "wilcoxon".
+#' @param which_adjustment method used for multiple testing correction by the p.adjust function. The default value is 'fdr'.
 #' @param threshold_fdr the p-value threshold for adjusted p-values. The default value is 0.1
 #' @param threshold_log2FC the Log2 fold-change threshold for significant interactions. The default value is 1.
 #' @param verbose a logical value indicating whether to print progress messages (default: FALSE).
@@ -30,6 +31,7 @@
 #' comm_result <- general_stat(comm_result)
 #' # test for differential expression
 #' comm_result <- test_diff(comm_result
+#'                        , which_test = "wilcoxon"
 #'                        ,which_adjustment = "fdr"
 #'                       ,verbose = TRUE
 #'                      ,threshold_fdr = 0.1
@@ -37,10 +39,11 @@
 #' )
 #'
 test_diff <- function(comm_result
+                      ,which_test = "wilcoxon"
                       ,which_adjustment = "fdr"
-                      ,threshold_fdr = 0.1 
+                      ,verbose = TRUE
+                      ,threshold_fdr = 0.1
                       ,threshold_log2FC = 1
-                      ,verbose = FALSE
                       ,... # params for the t.test of wilcoxon function
 ){
         anno_samples <- comm_result$anno_samples
@@ -58,6 +61,10 @@ test_diff <- function(comm_result
         interactions <- comm_result$weights
         anno_interactions <- comm_result$anno_interactions
         
+        
+        # calculate min w -> needed for the log2 transformation, in case t-test shoud be performed
+        min_w <- min(interactions[interactions != 0])
+        
         # calculate p.values
         anno_interactions <- cbind(anno_interactions
                                    ,do.call(rbind.data.frame
@@ -66,11 +73,26 @@ test_diff <- function(comm_result
                                                             
                                                             # do test
                                                             if(anno_interactions$passed_QC_filter[i]){
-                                                                    test <- wilcox.test(as.numeric(interactions[i,idx_case])
-                                                                                        ,y = as.numeric(interactions[i,idx_control])
-                                                                                        #,conf.int = TRUE
-                                                                                        ,exact=FALSE)
-                                                                    data.frame(p.value = test$p.value)
+                                                                    # select which test
+                                                                    if(which_test == "wilcoxon"){
+                                                                            test <- wilcox.test(as.numeric(interactions[i,idx_case])
+                                                                                                ,y = as.numeric(interactions[i,idx_control])
+                                                                                                ,exact=FALSE)
+                                                                            data.frame(p.value = test$p.value)
+                                                                    } else {
+                                                                            if (which_test == "t-test"){
+                                                                                    # substitute zero values with min_w
+                                                                                    my_interactions <- interactions[i,]
+                                                                                    my_interactions[my_interactions == 0] <- min_w
+                                                                                    # calculate t-test on the log2 transform data (!)
+                                                                                    test <- t.test(log2(my_interactions[idx_case])
+                                                                                                   ,y = log2(my_interactions[idx_control])
+                                                                                                   ,exact=FALSE
+                                                                                    )
+                                                                                    data.frame(p.value = test$p.value)
+                                                                            } else (stop(print("The which_test parameter can only be either 'wilcoxon' or 't-test'.")))
+                                                                    }
+                                                                    
                                                             } else data.frame(p.value = NA)
                                                             
                                                     })
