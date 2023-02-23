@@ -8,12 +8,19 @@ devtools::install_github("SoloveyMaria/community")
 ```
 ## Tutorial
 
-To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, use the command below. 
+To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, follow the steps below. 
 
 ### Requirements
 
-- Clone the repo
-    ```git clone https://github.com/SoloveyMaria/community.git``` and then cd into the directory ```cd community/```
+- Clone the repo with the below command. This will create a folder named "community" in your current directory.
+    ```
+    git clone https://github.com/SoloveyMaria/community.git
+    ``` 
+
+- Navigate to the `community` filder by executing the following commands.
+    ```
+    cd community/
+    ```
 
 - If you don't have conda installed yet, install [conda](https://conda.io/miniconda.html) by running the command below
 
