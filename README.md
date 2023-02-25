@@ -26,6 +26,7 @@ You can follow the instrusctions by copy pasting the below commands to the termi
 - Clone the repo with the below command. This will create a folder named "community" in your current directory.
 
 **Note:** You need to have Git installed on your system. If Git is not installed, please download this repository in zip format, decompress it, navigate to the directory, and then open up terminal in this folder. Here is the link to the zip file for this repository. [Click here to download](https://github.com/SoloveyMaria/community/archive/refs/heads/main.zip)
+
     ```
     git clone https://github.com/SoloveyMaria/community.git
     ``` 
