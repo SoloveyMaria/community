@@ -13,7 +13,7 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 ### Steps to open up terminal for Windows users:
 Below is how you can open up the terminal on the current folder, this would be the folder where you want to store all the files for the workflows and run community.
 
-Once you navigate to the desired folder. Press Alt+D then type "cmd" and press ENTER. 
+Once you navigate to the desired folder. Press <kbd>CTRL</kbd>+<kbd>D</kbd> then type "cmd" and press <kbd>ENTER</kbd>. 
 
 Welcome to dark side!..
 
