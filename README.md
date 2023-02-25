@@ -8,7 +8,18 @@ devtools::install_github("SoloveyMaria/community")
 ```
 ## Tutorial
 
-To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, follow the steps below. 
+To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, follow the steps below. All the commands are below run in terminal/cmd. 
+
+### Steps to open up terminal for Windows users:
+Below is how you can open up the terminal on the current folder, this would be the folder where you want to store all the files for the workflows and run community.
+
+Once you navigate to the desired folder. Press Alt+D then type "cmd" and press ENTER. 
+
+Welcome to dark side!..
+
+![](https://media.licdn.com/dms/image/C5612AQGoiz-xymrlFg/article-cover_image-shrink_600_2000/0/1564461754342?e=2147483647&v=beta&t=ismxInUlGeyIjYdoPItiCPVUCM_KMcY8801GoLdIVjk)
+
+You can follow the instrusctions by copy pasting the below commands to the terminal.
 
 ### Requirements
 
