@@ -31,7 +31,7 @@ You can follow the instrusctions by copy pasting the below commands to the termi
     git clone https://github.com/SoloveyMaria/community.git
     ```
 
-- Navigate to the `community` filder by executing the following commands.
+- Navigate to the `community` filder by executing the following command.
     ```
     cd community/
     ```
