@@ -1,7 +1,7 @@
 A brief description of the workflow for building the Ligand-Receptor database for community tool
 ========
 
-We utilize two main interaction databases from OmniPath: the [`ligrec extra` dataset](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html), and the [curated ligand-receptor interactions](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html) (Türei et al., 2021). To retrieve the databases we make use of OmnipathR package which is a client for the OmniPath web service (https://www.omnipathdb.org) and many other resources (Valdeolivas et al., 2019).
+${\color{red} I \ changed \ this \ paragraph}$ We utilize two main interaction databases from OmniPath: the [`ligrec extra` dataset](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html), and the [curated ligand-receptor interactions](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html) (Türei et al., 2021). To retrieve the databases we make use of OmnipathR package which is a client for the OmniPath web service (https://www.omnipathdb.org) and many other resources (Valdeolivas et al., 2019).
 
 The community tool does not handle complex molecules, so it is necessary to break them down into their components and classify each one as a ~~ligand 
 or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. To accomplish this, we rely on the OmniPath intercellular communication role annotation database ${\color{red} {any \ link \ here?}}$.
@@ -21,8 +21,8 @@ ${\color{red} I  \  changed  \  the  \  table!!!}$
 
 #### Annotation
 
-~~The complexes are decomposed into their individual components.~~ ${\color{red} this you addressed in the part above}$ The Omnipath Intercell annotation database is imported and used to annotate each component
-[RefLink](https://r.omnipathdb.org/reference/import_omnipath_intercell.html) (Türei et al., 2021). 
+${\color{red} I \ changed \ this \ paragraph}$
+~~The complexes are decomposed into their individual components.~~ ${\color{red} this \ you \ addressed \ in \ the \ part \ above}$ We annotate each individual component by using the [OmniPath Intercell annotation database](https://r.omnipathdb.org/reference/import_omnipath_intercell.html).
 If at least two databases categorize a component as a ligand or receptor, it is annotated as such. If not, we check other possible categories such as 
 extracellular matrix, secreted, and transmembrane. 
 
