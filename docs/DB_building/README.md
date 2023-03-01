@@ -39,7 +39,7 @@ resulting in a network that comprises only ligand-receptor interactions from com
 
 Finally, we can verify whether any of the pairwise combinations exist within this network.
 
-These steps are done separetely for each dataset and merged together. 
+These steps are done separetely for each dataset and merged together. ${\color{red} I \ don't \ understand \ what \ it \ means}$
 
 #### ${\color{red} Step \ 4:}$ add gene descriptions
 
