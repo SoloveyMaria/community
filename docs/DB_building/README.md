@@ -17,7 +17,7 @@ Example: lets assume complex G1_G2 ~~G3~~ is linked to another complex ${\color{
 | G1 | G4 | G1_G2_G3_G4~~G5_G6~~ |
 | G~~1~~2 | G~~5~~3 | G1_G2_G3_G4 ~~G5_G6~~ |
 | G~~1~~2 | G~~6~~4 | G1_G2_G3_G4 ~~G5_G6~~ |
-| ~~G2~~ | ~~G1~~ | ~~G1_G2_G3_G4~_G5_G6~~|
+| ~~G2~~ | ~~G1~~ | ~~G1_G2_G3_G4_G5_G6~~|
 | ~~G2~~ | ~~G3~~ | ~~G1_G2_G3_G4_G5_G6~~ |
 | ~~..~~ | ~~..~~ | ~~G1_G2_G3_G4_G5_G6~~ |
 
