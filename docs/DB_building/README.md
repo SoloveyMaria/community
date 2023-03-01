@@ -36,7 +36,7 @@ manual curation of interactions is performed once the entire database is built f
 ${\color{red}Since \ we \ want \ to \ annotate \ the\ individual \ components \ bla-bla ...}$ Next, we filter this extensive network to only include the components of the previously decomposed and annotated complexes, 
 resulting in a network that comprises only ligand-receptor interactions from complex molecules.
 
-Finally, we can verify whether any of the pairwise combinations exist within this network.
+Finally, we can verify whether any of the pairwise combinations that were created in the step 1 exist within this network.
 
 These steps are done separetely for each dataset and merged together. ${\color{red} I \ don't \ understand \ what \ it \ means}$
 
