@@ -1,7 +1,7 @@
 A brief description of the workflow for building the Ligand-Receptor database for community tool
 ========
 
-We utilize two main interaction databases from Omnipath<font color="red"> Some green text </font>. To retrieve the databases we make use of OmnipathR package which is a client for the OmniPath web service (https://www.omnipathdb.org) and many other resources (Valdeolivas et al., 2019).
+We utilize two main interaction databases from Omnipath <span style="color: green"> Some green text </span>. To retrieve the databases we make use of OmnipathR package which is a client for the OmniPath web service (https://www.omnipathdb.org) and many other resources (Valdeolivas et al., 2019).
 1. Interactions from the `ligrec extra` dataset of OmniPath. [RefLink](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html) (Türei et al., 2021)
 2. Curated ligand-receptor interactions of OmniPath. [RefLink](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html) (Türei et al., 2021)
 
