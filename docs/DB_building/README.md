@@ -21,7 +21,7 @@ ${\color{red} I  \  changed  \  the  \  table!!!}$
 
 #### Annotation
 
-The complexes are decomposed into their individual components. The Omnipath Intercell annotation database is imported and used to annotate each component
+~~The complexes are decomposed into their individual components.~~ ${\color{red} this you addressed in the part above}$ The Omnipath Intercell annotation database is imported and used to annotate each component
 [RefLink](https://r.omnipathdb.org/reference/import_omnipath_intercell.html) (Türei et al., 2021). 
 If at least two databases categorize a component as a ligand or receptor, it is annotated as such. If not, we check other possible categories such as 
 extracellular matrix, secreted, and transmembrane. 
