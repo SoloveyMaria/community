@@ -3,8 +3,8 @@ A brief description of the workflow for building the Ligand-Receptor database fo
 
 We utilize two main interaction databases from OmniPath: the [`ligrec extra` dataset](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html), and the [curated ligand-receptor interactions](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html) (Türei et al., 2021). To retrieve the databases we make use of OmnipathR package which is a client for the OmniPath web service (https://www.omnipathdb.org) and many other resources (Valdeolivas et al., 2019).
 
-The community tool does not handle complex molecules, so it is necessary to break them down into their components and classify each one as a ligand 
-or receptor \text{\sout{$TEXT$}}. To accomplish this, we rely on the OmniPath intercellular communication role annotation database ${\color{red} {any \ link \ here?}}$.
+The community tool does not handle complex molecules, so it is necessary to break them down into their components and classify each one as a ~~ligand 
+or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion molecule?}}$. To accomplish this, we rely on the OmniPath intercellular communication role annotation database ${\color{red} {any \ link \ here?}}$.
 
 #### Breaking down complexes:
 
