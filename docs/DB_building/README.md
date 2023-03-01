@@ -8,7 +8,7 @@ or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. 
 
 #### Breaking down complexes
 
-Example: lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~. We break ${\color{red}it}$ down into components and produce ~~all the possible~~ pairwise combinations.
+~~Example: l~~Lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~. We break ${\color{red}it}$ down into components and produce ~~all the possible~~ pairwise combinations.
 
 ${\color{red} I  \  changed  \  the  \  table!!!}$
 
