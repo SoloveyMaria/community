@@ -11,7 +11,7 @@ or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. 
 Example: lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~. We break ${\color{red}it}$ down into components and produce ~~all the possible~~ pairwise combinations.
 
 | ligand | receptor | pair | complex |
-|----|----|-------------------|
+|----|----|-------------------|-------------------|
 | L1 | R1 | L1_R1 |  L1_L2_R1_R2 |
 | L1 | R2 | L1_R1 | L1_L2_R1_R2 |
 | L2 | R1 | L2_R1| L1_L2_R1_R2 |
