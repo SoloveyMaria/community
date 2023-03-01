@@ -40,9 +40,11 @@ Finally, we can verify whether any of the pairwise combinations that were create
 
 These steps are done separetely for each dataset and merged together. ${\color{red} I \ don't \ understand \ what \ it \ means}$
 
+${\color{red}add \ paragraph \ on \ mergin \ the \ two \ lists}$ identifying the ligand and receptor components in each complex and merging them with the single ${\color{red}XXX \ PAIRS}$
+
 #### ${\color{red} Step \ 4:}$ add gene descriptions
 
-**After identifying the ligand and receptor components in each complex and merging them with the single ${\color{red}XXX \ PAIRS}$**, we want to annotate them with protein descriptions (${\color{red} you \ said \ gene \ descriptions \ in \ the \ bullet \ point??}$). To achieve this, we utilize `mygene` which is an R package that provides an easy-to-use interface to access the MyGene.info web service, which provides comprehensive annotation information for gene and protein data (Xin et al., 2016). We use the queryMany function to map gene symbols to protein descriptions from the human genome. We then map the protein descriptions to the dataset by matching them with their corresponding gene symbols in each components of each interaction.
+We annotate them with protein descriptions (${\color{red} you \ said \ gene \ descriptions \ in \ the \ bullet \ point??}$). To achieve this, we utilize `mygene` which is an R package that provides an easy-to-use interface to access the MyGene.info web service, which provides comprehensive annotation information for gene and protein data (Xin et al., 2016). We use the queryMany function to map gene symbols to protein descriptions from the human genome. We then map the protein descriptions to the dataset by matching them with their corresponding gene symbols in each components of each interaction.
 
 Once we have mapped the gene symbols to protein descriptions and incorporated this information into the dataset, we reorder the columns and rename them to ensure consistency across all the datasets. This results in a clean and organized dataset that includes not only information about the interactions but  also the names of the proteins involved. Additionally, we append all of the column information that originates from Omnipath to the ligand-receptor 
 interaction data. This allows users to track and see detailed information such as the sources, references, number of curation efforts, 
