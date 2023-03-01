@@ -15,7 +15,7 @@ ${\color{red} I  \  changed  \  the  \  table!!!}$
 | ligand | receptor | pair | complex |
 |----|----|-------------------|-------------------|
 | L1 | R1 | L1_R1 |  L1_L2_R1_R2 |
-| L1 | R2 | L1_R1 | L1_L2_R1_R2 |
+| L1 | R2 | L1_R2 | L1_L2_R1_R2 |
 | L2 | R1 | L2_R1| L1_L2_R1_R2 |
 | L2 | R2 | L2_R2 | L1_L2_R1_R2 |
 
