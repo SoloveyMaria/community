@@ -8,7 +8,7 @@ or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. 
 
 #### Breaking down complexes
 
-Example: lets assume complex G1_G2 ~~G3~~ is linked to another complex ${\color{red}G3_}$ G4 ~~G5_G6~~. We break down into components and produce all the possible pairwise combinations.
+Example: lets assume complex G1_G2 ~~G3~~ is linked to another complex ${\color{red}G3}$ _G4 ~~G5_G6~~. We break down into components and produce all the possible pairwise combinations.
 
 | c1 | c2 | complex~~_origin~~    |
 |----|----|-------------------|
