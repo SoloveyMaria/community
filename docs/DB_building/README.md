@@ -24,7 +24,7 @@ ${\color{red} I  \  changed  \  the  \  table!!!}$
 ${\color{red} I \ changed \ this \ paragraph}$
 ~~The complexes are decomposed into their individual components.~~ ${\color{red} this \ you \ addressed \ in \ the \ part \ above}$ We annotate each individual component by using the [OmniPath Intercell annotation database](https://r.omnipathdb.org/reference/import_omnipath_intercell.html).
 If at least two databases categorize a component as a ligand or receptor, it is annotated as such. If not, we check other possible categories such as 
-extracellular matrix, secreted, and transmembrane. 
+extracellular matrix, secreted, and transmembrane ${\color{red} and \ then \ do \ what??}$. 
 
 
 #### Detecting interaction pairs
