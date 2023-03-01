@@ -29,8 +29,8 @@ extracellular matrix, secreted, and transmembrane ${\color{red} and \ then \ do 
 
 #### ${\color{red} Step \ 3:}$ detect pairs
 
-We are utilizing all ~of the~ post-translational datasets from OmniPath (${\color{red} can \ you \ list \ them?}$)~~, which is the largest network of its kind,~~ ${\color{red} avoid \ such \ statements: \ in \ a \ year \ it \ can \ be \ different}$ to detect interactions rather than 
-make predictions. The creators of the network have acknowledged that it may include a significant number of false positives. 
+We are utilizing all ~of the~ post-translational datasets from OmniPath (${\color{red} can \ you \ list \ them?}$)~~, which is the largest network of its kind,~~ ${\color{red} avoid \ such \ statements: \ in \ a \ year \ it \ can \ be \ different}$ to detect interactions ~rather than 
+make predictions~. The creators of the network have acknowledged that it may include a significant number of false positives. 
 However, we are combining it with an annotations database to identify interactions. The network consists of 98,165 edges, and 
 manual curation of interactions is performed once the entire database is built for the community. [RefLink](https://r.omnipathdb.org/reference/import_post_translational_interactions.html)(Türei et al., 2021)
 
