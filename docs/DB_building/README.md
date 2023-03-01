@@ -6,7 +6,7 @@ ${\color{red} I \ changed \ this \ paragraph}$ We utilize two main interaction d
 The *community* tool does not handle complex molecules, so it is necessary to break them down into their components and classify each one as a ~~ligand 
 or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. To accomplish this, we rely on the OmniPath intercellular communication role annotation database ${\color{red} {any \ link \ here?}}$.
 
-#### Breaking down complexes
+#### ${\color{red} Step \ 1:}$ break down complexes
 
 ~~Example: l~~ Lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~ ${\color{red}to \ make \ a \ complex \ interaction \ L1_L2_R1_R2}$. We break down ${\color{red}the \ complex \ ligand \ and \ the \ complex \ receptor}$ into ${\color{red}their \ individual}$ components and ${\color{red}make \ a \ list \ of \ ligand-receptor \ pairs \ by \ concatenating \ all \ combitaions \ of \ the \ individual \ components}$ ~~produce all the possible pairwise combinations~~.
 
@@ -19,7 +19,7 @@ ${\color{red} I  \  changed  \  the  \  table!!!}$
 | L2 | R1 | L2_R1| L1_L2_R1_R2 |
 | L2 | R2 | L2_R2 | L1_L2_R1_R2 |
 
-#### Annotation
+#### ${\color{red} Step \ 2:}$ annotate individual components
 
 ${\color{red} I \ changed \ this \ paragraph}$
 ~~The complexes are decomposed into their individual components.~~ ${\color{red} this \ you \ addressed \ in \ the \ part \ above}$ We annotate each individual component by using the [OmniPath Intercell annotation database](https://r.omnipathdb.org/reference/import_omnipath_intercell.html).
@@ -27,7 +27,7 @@ If at least two databases categorize a component as a ligand or receptor, it is 
 extracellular matrix, secreted, and transmembrane ${\color{red} and \ then \ do \ what??}$. 
 
 
-#### Detecting interaction pairs
+#### ${\color{red} Step \ 3:}$ detect pairs
 
 We are utilizing all of the post-translational datasets from OmniPath, which is the largest network of its kind, to detect interactions rather than 
 make predictions. The creators of the network have acknowledged that it may include a significant number of false positives. 
@@ -41,7 +41,7 @@ Finally, we can verify whether any of the pairwise combinations exist within thi
 
 These steps are done separetely for each dataset and merged together. 
 
-#### Mapping Gene Descriptions
+#### ${\color{red} Step \ 4:}$ add gene descriptions
 
 **After identifying the ligand and receptor components in each complex and merging them with the single XXX PAIRS**, we want to annotate them with protein descriptions. To achieve this, we utilize `mygene` which is an R package that provides an easy-to-use interface to access the MyGene.info web service, which provides comprehensive annotation information for gene and protein data (Xin et al., 2016). We use the queryMany function to map gene symbols to protein descriptions from the human genome. We then map the protein descriptions to the dataset by matching them with their corresponding gene symbols in each components of each interaction.
 
