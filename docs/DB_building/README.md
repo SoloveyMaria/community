@@ -6,7 +6,7 @@ We utilize two main interaction databases from OmniPath: the [`ligrec extra` dat
 The community tool does not handle complex molecules, so it is necessary to break them down into their components and classify each one as a ~~ligand 
 or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. To accomplish this, we rely on the OmniPath intercellular communication role annotation database ${\color{red} {any \ link \ here?}}$.
 
-#### Breaking down complexes:
+#### Breaking down complexes
 
 Example: lets assume complex G1_G2_G3 is linked to another complex G4_G5_G6. We break down into components and produce all the possible pairwise combinations.
 
