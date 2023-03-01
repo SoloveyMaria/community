@@ -10,16 +10,12 @@ or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. 
 
 Example: lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~. We break ${\color{red}it}$ down into components and produce ~~all the possible~~ pairwise combinations.
 
-| c1 | c2 | complex~~origin~~    |
+| ligand | receptor | pair | complex |
 |----|----|-------------------|
-| G1 | G2 ${\color{red} is \ this \ correct? \ or \ will \ it \ start \ with \ G1 _ G3?}$ | G1_G2_G3_G4~~G5_G6~~ |
-| G1 | G3 | G1_G2_G3_G4~~G5_G6~~ |
-| G1 | G4 | G1_G2_G3_G4~~G5_G6~~ |
-| G~~1~~${\color{red}2}$ | G~~5~~${\color{red}3}$ | G1_G2_G3_G4 ~~G5_G6~~ |
-| G~~1~~${\color{red}2}$ | G~~6~~${\color{red}4}$ | G1_G2_G3_G4 ~~G5_G6~~ |
-| ~~G2~~ | ~~G1~~ | ~~G1_G2_G3_G4_G5_G6~~|
-| ~~G2~~ | ~~G3~~ | ~~G1_G2_G3_G4_G5_G6~~ |
-| ~~..~~ | ~~..~~ | ~~G1_G2_G3_G4_G5_G6~~ |
+| L1 | R1 | L1_R1 |  L1_L2_R1_R2 |
+| L1 | R2 | L1_R1 | L1_L2_R1_R2 |
+| L2 | R1 | L2_R1| L1_L2_R1_R2 |
+| L2 | R2 | L2_R2 | L1_L2_R1_R2 |
 
 #### Annotation
 
