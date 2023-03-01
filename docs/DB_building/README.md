@@ -10,9 +10,9 @@ or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. 
 
 Example: lets assume complex G1_G2 ~~G3~~ is linked to another complex ${\color{red}G3}$ _G4 ~~G5_G6~~. We break down into components and produce all the possible pairwise combinations.
 
-| c1 | c2 | complex~~_origin~~    |
+| c1 | c2 | complex~~origin~~    |
 |----|----|-------------------|
-| G1 | G2 ${\color{red} is \ this \ correct? \ or \ will \ it \ start \ with \ G1_G3?}$ | G1_G2_G3_G4~~_G5_G6~~ |
+| G1 | G2 ${\color{red} is \ this \ correct? \ or \ will \ it \ start \ with \ G1_G3?}$ | G1_G2_G3_G4~~G5_G6~~ |
 | G1 | G3 | G1_G2_G3_G4~~_G5_G6~~ |
 | G1 | G4 | G1_G2_G3_G4~~_G5_G6~~ |
 | G~~1~~2 | G~~5~~3 | G1_G2_G3_G4 ~~_G5_G6~~ |
