@@ -33,7 +33,7 @@ To detect interactions (${\color{red}pairs??}$), we are utilizing the post-trans
 However, we are combining it with an annotations database to identify interactions. ${\color{red} how \ does \ this \ address \ the \ problem \ of \ false \ positives??}$ The network consists of 98,165 interactions, and 
 manual curation of interactions is performed once the entire database is built for the community. [RefLink](https://r.omnipathdb.org/reference/import_post_translational_interactions.html)(Türei et al., 2021) ${\color{red}I \ don't \ understand \ the \ last \ part \ and \ don't \ understand \ what \ the \ link \ is \ referring \ to}$
 
-Next, we filter this extensive network to only include the components of the previously decomposed and annotated complexes, 
+${\color{red}Since \ we \ want \ to \ annotate \ the\ individual \ components \ bla-bla ...}$ Next, we filter this extensive network to only include the components of the previously decomposed and annotated complexes, 
 resulting in a network that comprises only ligand-receptor interactions from complex molecules.
 
 Finally, we can verify whether any of the pairwise combinations exist within this network.
