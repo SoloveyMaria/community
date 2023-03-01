@@ -8,7 +8,7 @@ or receptor~~ ${\color{red} {ligand, \ receptor \ or \ adhesion \ molecule?}}$. 
 
 #### Breaking down complexes
 
-1. ~~Example: l~~ Lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~ ${\color{red}to \ make \ a \ complex \ interaction \ L1_L2_R1_R2}$. We break ${\color{red}the \ complex \ ligand \ and \ the \ complex \receptor}$ down into ${\color{red}their \ individual}$ components and produce ~~all the possible~~ pairwise combinations.
+1. ~~Example: l~~ Lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~ ${\color{red}to \ make \ a \ complex \ interaction \ L1_L2_R1_R2}$. We break down ${\color{red}the \ complex \ ligand \ and \ the \ complex \ receptor}$ into ${\color{red}their \ individual}$ components and ${\color{red}make \ a \ list \ of \ ligand-receptor \ pairs \ by \ concatenating \ all \ combitaions \ of \ the \ individual \ components}$ ~~produce all the possible pairwise combinations~~.
 
 ${\color{red} I  \  changed  \  the  \  table!!!}$
 
