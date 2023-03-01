@@ -29,7 +29,7 @@ If at least two databases categorize a component as a ligand or receptor, it is 
 
 #### ${\color{red} Step \ 3:}$ detect pairs
 
-We are utilizing the post-translational dataset from OmniPath ~~, which is the largest network of its kind,~~ ${\color{red} avoid \ such \ statements: \ in \ a \ year \ it \ can \ be \ different}$ to detect interactions ~rather than 
+We are utilizing the post-translational dataset from OmniPath (${\color{red}link!!}$) ~~, which is the largest network of its kind,~~ ${\color{red} avoid \ such \ statements: \ in \ a \ year \ it \ can \ be \ different}$ to detect interactions ~rather than 
 make predictions~. The creators of the network have acknowledged that it may include a significant number of false positives. 
 However, we are combining it with an annotations database to identify interactions. ${\color{red} how \ does \ this \ address \ the \ problem \ of \ false \ positives??}$ The network consists of 98,165 ~edges~${\color{red} interactions}$ (${\color{red} aviod \ jargonisms \ if \ you \ don't \ want \ to \ explain \ them}$), and 
 manual curation of interactions is performed once the entire database is built for the community. [RefLink](https://r.omnipathdb.org/reference/import_post_translational_interactions.html)(Türei et al., 2021) ${\color{red}I \ don't \ understand \ the \ last \ part \ and \ don't \ understand \ what \ the \ link \ is \ referring \ to}$
