@@ -37,7 +37,7 @@ After obtaining the binary interactions of complex molecules, the interactions a
 
 We annotate each individual component by using the [`OmniPath intercellular communication role annotation database`](https://r.omnipathdb.org/reference/import_omnipath_intercell.html).
 If at least two databases categorize a component as a ligand or receptor, it is annotated as such. If not, we check other possible categories such as 
-*extracellular matrix*, *secreted*, and *transmembrane*. We categorize *extracellular matrix* and *secreted* as transmitter (ligand) while for transmitters we do a manual annotation through genecards and UniProt.
+*extracellular matrix*, *secreted*, and *transmembrane*. We categorize *extracellular matrix* and *secreted* as transmitter (ligand) while for transmembranes we do a manual annotation through genecards and UniProt.
 
 These steps are done separetely for each datasets, namely, `ligrec extra`, and the `curated ligand-receptor interactions`.
 
