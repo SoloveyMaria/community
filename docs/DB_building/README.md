@@ -1,7 +1,7 @@
 A brief description of the workflow for building the Ligand-Receptor database for community tool
 ========
 
-We utilize two main interaction databases from OmniPath (Türei et al., 2021): the [`ligrec extra` dataset](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html), and the [`curated ligand-receptor interactions`](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html). To retrieve the databases we make use of OmnipathR package (Valdeolivas et al., 2019) which is a client for the OmniPath web service (https://www.omnipathdb.org).
+We utilize two main interaction databases from OmniPath (Türei et al., 2021): the [`ligrec extra`](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html), and the [`curated ligand-receptor interactions`](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html). To retrieve the databases we make use of OmnipathR package (Valdeolivas et al., 2019) which is a client for the OmniPath web service (https://www.omnipathdb.org).
 
 Cellular interactions can occur between individual genes or proteins, where one acts as a transmitter (ligand, L1) and the other as a receiver (receptor, R1). This binary interaction can be represented as L1_R1. However, in some cases, these components can be composed of multiple genes or proteins. These members of a complex may share certain roles or functions, such as all members being receptors or ligands. Alternatively, the complex may be comprised of a mixture of components, such as one ligand and one receptor or one ligand and two receptors, and so on.
 
@@ -37,7 +37,7 @@ After obtaining the binary interactions of complex molecules, the interactions a
 
 We annotate each individual component by using the [`OmniPath intercellular communication role annotation database`](https://r.omnipathdb.org/reference/import_omnipath_intercell.html).
 If at least two databases categorize a component as a ligand or receptor, it is annotated as such. If not, we check other possible categories such as 
-*extracellular matrix*, *secreted*, and *transmembrane*. We categorize *extracellular matrix* and *secreted* as transmitter (ligand) while for transmitters we do a manual annotation through genecards and UniProt.
+*extracellular matrix*, *secreted*, and *transmembrane*. We categorize *extracellular matrix* and *secreted* as transmitter (ligand) while for transmembranes we do a manual annotation through genecards and UniProt.
 
 These steps are done separetely for each datasets, namely, `ligrec extra`, and the `curated ligand-receptor interactions`.
 
