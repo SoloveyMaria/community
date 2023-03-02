@@ -8,48 +8,44 @@ Cellular interactions can occur between individual genes or proteins, where one 
 All communication tools have a way of scoring interactions by measuring changes. For example, the communication tool assigns weights by calculating rho, phi, and mean values. However, one of the main reasons we do not include complexes in our database is that if a weight value is assigned to a complex, the user would not know how much each component contributes. In other words, the user would not be able to determine which component was affected by any changes observed. Furthermore, the composition of complexes can vary naturally between different cell types, and if the database does not capture this, none of the components will be present. Conversely, using components separately enables users to check how each component behaves individually.
 
 Therefore, we break down these complexes into their individual components, identify their functions as transmitters (ligand) or receivers (receptor), and detect their possible connections. These steps are discussed below in detail.
+
+#### Step 1: break down complexes
  
  To accomplish this, we rely on the [`OmniPath intercellular communication role annotation database`](https://r.omnipathdb.org/reference/import_omnipath_intercell.html) to indetify the functions of the component and [`Intercellular communication network`](https://r.omnipathdb.org/reference/import_intercell_network.html) to detect their binary connections.
 
-~~Example: l~~ Lets assume ${\color{red}a}$ complex ${\color{red}ligand}$ ${\color{red}L1_L2}$ ~~G1_G2 _G3~~ is linked to ${\color{red}a}$ ~~another~~ complex ${\color{red}receptor}$ ${\color{red}a}$ ${\color{red}R1_R2}$  ~~G4_G5_G6~~ ${\color{red}to \ make \ a \ complex \ interaction \ L1_L2_R1_R2}$. We break down ${\color{red}the \ complex \ ligand \ and \ the \ complex \ receptor}$ into ${\color{red}their \ individual}$ components and ${\color{red}make \ a \ list \ of \ ligand-receptor \ pairs \ by \ concatenating \ all \ combitaions \ of \ the \ individual \ components}$ ~~produce all the possible pairwise combinations~~.
+Lets assume a complex G1_G2 _G3 is linked to a complex G4_G5_G6 to make a complex interaction G1_G2_G3_G4_G5_G6. We break down the complexes into their components and make a list of transmitter-receiver  pairs by concatenating all the combinations. ~~produce all the possible binary pairwise combinations~~.
 
-${\color{red} I  \  changed  \  the  \  table!!!}$
 
-| ligand | receptor | pair | complex |
-|----|----|-------------------|-------------------|
-| L1 | R1 | L1_R1 |  L1_L2_R1_R2 |
-| L1 | R2 | L1_R2 | L1_L2_R1_R2 |
-| L2 | R1 | L2_R1| L1_L2_R1_R2 |
-| L2 | R2 | L2_R2 | L1_L2_R1_R2 |
+| transmitter | receiver | pair  | complex_origin    |
+| :---------- | :------- | :---- | :---------------- |
+| G1          | G2       | G1_G2 | G1_G2_G3_G4_G5_G6 |
+| G1          | G3       | G1_G3 | G1_G2_G3_G4_G5_G6 |
+| G1          | G4       | G1_G4 | G1_G2_G3_G4_G5_G6 |
+| G1          | G5       | G1_G5 | G1_G2_G3_G4_G5_G6 |
+| G1          | G6       | G1_G6 | G1_G2_G3_G4_G5_G6 |
+| G2          | G1       | G2_G1 | G1_G2_G3_G4_G5_G6 |
+| G2          | G3       | G2_G3 | G1_G2_G3_G4_G5_G6 |
+| ..          | ..       |       | G1_G2_G3_G4_G5_G6 |
 
-#### ${\color{red} Step \ 2:}$ annotate individual components
 
-${\color{red} I \ changed \ this \ paragraph}$
-~~The complexes are decomposed into their individual components.~~ ${\color{red} this \ you \ addressed \ in \ the \ part \ above}$ We annotate each individual component by using the OmniPath [`intercellular communication role annotation database`](https://r.omnipathdb.org/reference/import_omnipath_intercell.html) (${\color{red}doublecheck!!!}$).
+#### Step 2: detect pairs
+
+After obtaining the binary interactions of complex molecules, the interactions are checked against a large interaction network, which is the [all post-translational datasets of OmniPath](https://r.omnipathdb.org/reference/import_post_translational_interactions.html), the largest database of its kind, containing [139 interaction databases](https://r.omnipathdb.org/reference/get_interaction_resources.html)  as of March 2023. However, the creators of this network have noted that it may contain a significant number of false positives. Therefore, to mitigate this issue, an additional step is taken to eliminate false positive interactions using an annotation database that categorizes the components into ligand or receptor. Specifically, interactions in which a component is annotated as a receptor but is listed in the "source" column (which is designated for transmitters) of the interaction network, or vice versa for ligands, are discarded. This approach ensures that only valid interactions between ligands and receptors are retained.
+
+
+#### Step 3: annotate individual components
+
+We annotate each individual component by using the [`OmniPath intercellular communication role annotation database`](https://r.omnipathdb.org/reference/import_omnipath_intercell.html).
 If at least two databases categorize a component as a ligand or receptor, it is annotated as such. If not, we check other possible categories such as 
-*extracellular matrix*, *secreted*, and *transmembrane* ${\color{red} and \ then \ do \ what??}$. 
+*extracellular matrix*, *secreted*, and *transmembrane*. We categorize *extracellular matrix* and *secreted* as transmitter (ligand) while for transmitters we do a manual annotation through genecards and UniProt.
+
+These steps are done separetely for each datasets, namely, `ligrec extra`, and the `curated ligand-receptor interactions`.
+
+#### Step 4: add gene descriptions
+As the last step in our pipeline, we add gene names to each individual gene in our database by using publicly available gene annotation resource, namely, MyGene.info web service, which provides comprehensive annotation information for gene and protein data (Xin et al., 2016). This additional information provides users with a more comprehensive understanding of the biological processes and pathways associated with each gene, enabling them to quickly and efficiently explore the functional implications and potential interactions of the complex molecules and their components in our database. By incorporating gene names alongside gene symbols, we aim to enhance the accessibility and interpretability of our database for researchers across a variety of fields, from computational biology to systems pharmacology.
 
 
-#### ${\color{red} Step \ 3:}$ detect pairs
-
-To detect interactions (${\color{red}pairs??}$), we are utilizing the post-translational dataset from OmniPath (${\color{red}link!!}$) ${\color{red}, which \ is \ a \ network \ of ...}$. The creators of the network (${\color{red}dataset???}$) have acknowledged that it may include a significant number of false positives. 
-However, we are combining it with an annotations database to identify interactions. ${\color{red} how \ does \ this \ address \ the \ problem \ of \ false \ positives??}$ The network consists of 98,165 interactions, and 
-manual curation of interactions is performed once the entire database is built for the community. [RefLink](https://r.omnipathdb.org/reference/import_post_translational_interactions.html)(Türei et al., 2021) ${\color{red}I \ don't \ understand \ the \ last \ part \ and \ don't \ understand \ what \ the \ link \ is \ referring \ to}$
-
-${\color{red}Since \ we \ want \ to \ annotate \ the\ individual \ components \ bla-bla ...}$ Next, we filter this extensive network to only include the components of the previously decomposed and annotated complexes, 
-resulting in a network that comprises only ligand-receptor interactions from complex molecules.
-
-Finally, we can verify whether any of the pairwise combinations that were created in the step 1 exist within this network.
-
-These steps are done separetely for each dataset and merged together. ${\color{red} I \ don't \ understand \ what \ it \ means}$
-
-${\color{red}add \ paragraph \ on \ mergin \ the \ two \ lists}$ identifying the ligand and receptor components in each complex and merging them with the single ${\color{red}XXX \ PAIRS}$
-
-#### ${\color{red} Step \ 4:}$ add gene descriptions
-
-As the last step, we add annotation to each individual gene in our database by using protein descriptions (${\color{red} you \ said \ gene \ descriptions \ in \ the \ bullet \ point??}$). ${\color{red}explain\ first \ what \ you \ need \ to \ do \ what \ you described \ in \ the \ previous \ sentense \ and \ after \ that \ mention \ the \ database }$ To achieve this, blabla MyGene.info web service, which provides comprehensive annotation information for gene and protein data (Xin et al., 2016). We utilize `mygene` R package. We use the queryMany function to map gene symbols to protein descriptions from the human genome. We then map the protein descriptions to the dataset by matching them with their corresponding gene symbols in each components of each interaction (${\color{red}make \ this \ sentense \ easier}$).
-
-Once we have mapped the gene symbols to protein descriptions and incorporated this information into the dataset, we reorder the columns and rename them to ensure consistency across all the datasets (${\color{red}explian \ what \ are \ the \ "all \ dataset" \ you \ are \ talking \ about}$). This results in a clean and organized dataset (${\color{red}database \ of \ ligand-receptor \ interactions?}$) that includes not only the information about the interactions (${\color{red}?}$) but  also the names of the proteins involved. Additionally, we append all of the column information that originates from OmniPath to our database. This allows users to track and see detailed information such as the sources, references, number of curation efforts, 
+Once we have mapped the gene symbols to protein descriptions and incorporated this information into the dataset, we reorder the columns and rename them to ensure consistency across all the datasets, `ligrec extra`, and the `curated ligand-receptor interactions`. This results in a clean and organized database of ligand-receptor interactions. Additionally, we append all of the column information that originates from OmniPath to our database. This allows users to track and see detailed information such as the sources, references, number of curation efforts, 
 and number of resources for each interaction. By including this information, we hope to improve the transparency and reliability of the data, 
 as users can easily verify the sources and level of curation for each interaction.
 
