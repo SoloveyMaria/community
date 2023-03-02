@@ -44,8 +44,21 @@ These steps are done separetely for each datasets, namely, `ligrec extra`, and t
 #### Step 4: add gene descriptions
 As the last step in our pipeline, we add gene names to each individual gene in our database by using publicly available gene annotation resource, namely, MyGene.info web service, which provides comprehensive annotation information for gene and protein data (Xin et al., 2016). This additional information provides users with a more comprehensive understanding of the biological processes and pathways associated with each gene, enabling them to quickly and efficiently explore the functional implications and potential interactions of the complex molecules and their components in our database. By incorporating gene names alongside gene symbols, we aim to enhance the accessibility and interpretability of our database for researchers across a variety of fields, from computational biology to systems pharmacology.
 
+The purpose of this column becomes evident in step 5, where we utilize it to curate our database.
 
-Once we have mapped the gene symbols to protein descriptions and incorporated this information into the dataset, we reorder the columns and rename them to ensure consistency across all the datasets, `ligrec extra`, and the `curated ligand-receptor interactions`. This results in a clean and organized database of ligand-receptor interactions. Additionally, we append all of the column information that originates from OmniPath to our database. This allows users to track and see detailed information such as the sources, references, number of curation efforts, 
+#### Step 5: curation
+
+We have noticed that some gene pairs are appearing as swapped pairs, meaning that a gene C1 is linked to C2 and vice versa, with C2 being linked to C1. Upon investigating, we found that these pairs are originating from the binary interactions of the two datasets (ligrec extra and the curated ligand-receptor interactions) which we had taken as they are.
+
+To resolve this issue, we first designate plexin, neuroligin, and ADAM family genes as ligands. If any of these genes appear in the receptor column, we discard them. Additionally, we cross-check the gene name annotations from the previous step and remove those pairs where the annotation indicates a receptor under the ligand column.
+
+Furthermore, for genes whose names do not include the keywords of ligand/receptor, such as gene "BMP2" "bone morphogenetic protein 2", we perform a manual correction. We have curated a list of genes that require manual curation, which includes ligands such as AGRN, BMP2, BMP4, VTCN1, CD244, CD38, GAS6, GDNF, GUCA2A, HHLA2, IHH, PSEN1, NLGN, NRTN, RPH3A, SHH, FLT3LG and receptors such as CD2, CD27, CD80, CD86, SELL, CD44, CD81, CD8A, CLEC1B, GLG1, TYROBP, and FLT3.
+
+After addressing the swapped pairs issue by assigning certain genes as transmitters and manually curating the pairs, we still encountered other pairs that appeared as swapped. To resolve these, we checked if there was a consensus agreement on the direction between resources. If there was no agreement, we picked the direction that came first alphabetically. This step ensured that the interactions in our dataset were consistent and reliable.
+
+#### Step 6: append columns from OmniPath
+
+We reorder the columns and rename them to ensure consistency across all the datasets, `ligrec extra`, and the `curated ligand-receptor interactions`. This results in a clean and organized database of ligand-receptor interactions. Additionally, we append all of the column information that originates from OmniPath to our database. This allows users to track and see detailed information such as the sources, references, number of curation efforts, 
 and number of resources for each interaction. By including this information, we hope to improve the transparency and reliability of the data, 
 as users can easily verify the sources and level of curation for each interaction.
 
