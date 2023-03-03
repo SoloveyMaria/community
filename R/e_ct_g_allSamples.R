@@ -19,15 +19,8 @@ e_ct_g_allSamples <- function(counts, anno_cells, anno_interactions_allSamples, 
                 print("calculate mean expression in the active fraction")
         }
         
-        # check if anno_cells contains column 'cell_ID'
-        if (!("cell_ID" %in% colnames(anno_cells))) {
-                stop({
-                        "anno_cells does not contain column cell_ID. Please add this column and make sure it contains the same values as the column names in the counts file."
-                })
-        }
-        
         # check if cell IDs are identical in my_counts (column names) and my_anno_cells (row names)
-        if (!identical(anno_cells$cell_ID, colnames(counts))) {
+        if (!identical(rownames(anno_cells), colnames(counts))) {
                 stop({
                         "cell IDs are NOT identical in counts (column names) and anno_cells (row names)"
                 })

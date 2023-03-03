@@ -37,15 +37,9 @@ meanAboveThreshold <- function(cell_type_name = "all"
                                ,anno_cells
                                ,threshold_expr = 0.05){
         
-        # check if anno_cells contains column "cell_ID"
-        if(!("cell_ID" %in% colnames(anno_cells))){
-                stop({
-                        "anno_cells does not contain column cell_ID. Please add this column and make sure it contains the same values as the column names in the counts file."
-                })
-        }
         
         # check if cell IDs are identical in my_counts (column names) and my_anno_cells (row names)
-        if(!identical(anno_cells$cell_ID
+        if(!identical(rownames(anno_cells)
                       ,colnames(counts))){
                 stop({
                         "cell IDs are NOT identical in counts (column names) and anno_cells (row names)"
