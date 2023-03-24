@@ -1,59 +1,72 @@
-@echo off
+@ECHO OFF
 
 REM Settings
-set CONDA_ENV=community_tutorial
-set MINICONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
-set "CONDA=%UserProfile%\miniconda3\condabin\conda.bat"
-set "BASE=%UserProfile%\miniconda3"
-set "file=src\canno_cells_corr.txt"
-set PATH=%PATH%;%UserProfile%\miniconda3;%UserProfile%\miniconda3\Scripts\
+SET CONDA_ENV=community_tutorial
+SET MINICONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
 
-if not exist "%CONDA%" set "CONDA=%UserProfile%\miniconda3\condabin\conda.bat"
-if not exist "%CONDA%" set "BASE=%UserProfile%\miniconda3"
-echo %CONDA%
-echo %BASE%
-
-
-set ACTIVATE=%BASE%\Scripts\activate.bat
-set PATH=%PATH%;%UserProfile%\miniconda3\condabin\
-
-:download_data
-REM download preprocessed data
-if not exist %file% (
-  echo File does not exist, downloading...
-  curl -o %file% https://zenodo.org/record/7565938/files/anno_cells_corr.txt
-) else (
-  echo File already exists, skipping download...
+IF "%CONDA%" == "" (
+    SET BASE=%USERPROFILE%\miniconda3\condabin\conda.bat
+) ELSE (
+    SET BASE=%~dp0..\conda.bat
 )
 
-:install_conda
-REM install Miniconda
-if not exist "%CONDA%" (
-curl -L %MINICONDA_URL% -o miniconda.exe
-start /wait /min "Installing Miniconda3..." miniconda.exe /InstallationType=JustMe /S /D="%BASE%"
-)
+SET ACTIVATE=%BASE%\Scripts\activate.bat
 
-:create_env
-REM create or update conda environment
-if exist "%CONDA%" (
-echo "Conda found at %CONDA%"
-if conda.exe info --envs | findstr /C:%CONDA_ENV% > NUL (
-echo "Environment %CONDA_ENV% exists, updating..."
-call conda activate base
-call mamba env update -n %CONDA_ENV% -f environment.yml
-) else (
-echo "Environment %CONDA_ENV% not found, creating..."
-%CONDA% install -n base -c conda-forge mamba
-call %ACTIVATE% base
-mamba env create -n %CONDA_ENV% -f environment.yml
-)
-call %ACTIVATE% %CONDA_ENV%
-call Rscript "install.R"
-) else (
-echo "Conda not found, please install and try again."
-)
+REM Targets
+:create-env
+    SETLOCAL EnableDelayedExpansion
+    FOR /F %%i IN ('where conda.exe') DO (
+        SET CONDA=%%~dpi
+        SET BASE=!CONDA!..\condabin\conda.bat
+    )
+    IF "%CONDA%" == "" (
+        curl -L %MINICONDA_URL% -o miniconda.exe
+        START /WAIT "" miniconda.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%USERPROFILE%\miniconda3
+        DEL /Q miniconda.exe
+        FOR /F %%i IN ('where conda.exe') DO (
+            SET CONDA=%%~dpi
+            SET BASE=!CONDA!..\condabin\conda.bat
+        )
+    )
+    CALL %BASE% activate %CONDA_ENV%
+    IF %ERRORLEVEL% NEQ 0 (
+        CALL %BASE% create -n %CONDA_ENV%
+        CALL %ACTIVATE% %CONDA_ENV%
+        CALL %BASE% install -n %CONDA_ENV% -c conda-forge mamba
+        CALL mamba env update -n %CONDA_ENV% -f environment.yml
+        CALL R -e "devtools::install_github('SoloveyMaria/community', upgrade = 'always'); q()"
+    )
+    CALL %ACTIVATE% %CONDA_ENV%
+    CALL mamba env update -n %CONDA_ENV% -f environment.yml
+    CALL R -e "devtools::install_github('SoloveyMaria/community', upgrade = 'always'); q()"
 
-:run_jupyter
-REM run jupyter notebooks
-call %ACTIVATE% %CONDA_ENV%
-jupyter notebook
+
+:download-data
+    curl https://zenodo.org/record/7565938/files/anno_cells_corr.txt -o src\anno_cells_corr.txt
+    curl https://zenodo.org/record/7565938/files/anno_samples_corr.txt -o src\anno_samples_corr.txt
+    curl https://zenodo.org/record/7565938/files/counts_corr.csv.gz -o src\counts_corr.csv.gz
+
+:run-jupyter
+    CALL %BASE% activate %CONDA_ENV%
+    START jupyter notebook
+
+:help
+    ECHO Usage:
+    FOR /F "tokens=1,* delims=:?" %%A IN ('FINDSTR /B /R /C:"^[a-zA-Z_-][^=]*:.*?##" "%~dpnx0"') DO (
+        SET "target=%%A"
+        SET "help=%%B"
+        CALL :leftPad target padded 30
+        ECHO   %padded%  %help%
+    )
+    EXIT /B
+
+:leftPad
+    SETLOCAL
+    SET "str=%~1"
+    SET /A len=%~2
+    SET "padChar= "
+    FOR /L %%i IN (1,1,%len%) DO SET "padChar=!padChar! "
+    SET "padded=!padChar!!str!"
+    SET "padded=!padded:~-%len%!"
+    ENDLOCAL & SET "%~3=%padded%"
+    EXIT /B

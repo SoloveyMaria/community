@@ -20,5 +20,3 @@ dependencies:
 - r-circlize
 - r-r.utils
 - r-data.table
-- bioconductor-org.hs.eg.db
-- bioconductor-clusterprofiler
