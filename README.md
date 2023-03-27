@@ -35,6 +35,11 @@ You can follow the instrusctions by copy pasting the below commands to the termi
     ```
     cd community/
     ```
+    
+- For windows users execute the below command
+    ```
+    windows.bat create-env
+    ```
 
 - If you don't have conda installed yet, install [conda](https://conda.io/miniconda.html) by running the command below
 
