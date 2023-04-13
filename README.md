@@ -15,10 +15,6 @@ Below is how you can open up the terminal on the current folder, this would be t
 
 Once you navigate to the desired folder. Press <kbd>CTRL</kbd>+<kbd>D</kbd> then type "cmd" and press <kbd>ENTER</kbd>. 
 
-Welcome to dark side!..
-
-![](https://media.licdn.com/dms/image/C5612AQGoiz-xymrlFg/article-cover_image-shrink_600_2000/0/1564461754342?e=2147483647&v=beta&t=ismxInUlGeyIjYdoPItiCPVUCM_KMcY8801GoLdIVjk)
-
 You can follow the instrusctions by copy pasting the below commands to the terminal.
 
 ### Requirements
@@ -97,4 +93,4 @@ We welcome contributions from other developers. To contribute to community, plea
 
 ## Contact
 
-If you have any questions or suggestions, please contact me at MariaTheBoss
+If you have any questions or suggestions, please contact me at maria.solovey@bmc.med.lmu.de
