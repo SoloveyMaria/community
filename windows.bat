@@ -1,72 +1,37 @@
-@ECHO OFF
+@echo off
 
-REM Settings
-SET CONDA_ENV=community_tutorial
-SET MINICONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
-
-IF "%CONDA%" == "" (
-    SET BASE=%USERPROFILE%\miniconda3\condabin\conda.bat
-) ELSE (
-    SET BASE=%~dp0..\conda.bat
+rem Check if Conda is installed
+where conda >nul 2>&1
+if %errorlevel% neq 0 (
+    rem If Conda is not installed, download and install it
+    echo Conda is not installed. Downloading and installing...
+    powershell.exe -Command "Invoke-WebRequest https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe -OutFile miniconda.exe"
+    start /wait miniconda.exe /S /D="%UserProfile%\Miniconda3"
+    del miniconda.exe
+    call "%UserProfile%\Miniconda3\Scripts\activate.bat" "%UserProfile%\Miniconda3"
+    set "PATH=%UserProfile%\Miniconda3;%UserProfile%\Miniconda3\Scripts;%UserProfile%\Miniconda3\Library\bin;%PATH%"
+    call conda init cmd.exe
 )
 
-SET ACTIVATE=%BASE%\Scripts\activate.bat
+rem Check if community_tutorial environment exists
+conda env list | findstr /R /C:"\bcommunity_tutorial\b" >nul 2>&1
+if %errorlevel% equ 0 (
+    rem If community_tutorial environment exists, run Jupyter Notebook
+    echo community_tutorial environment exists. Running Jupyter Notebook...
+    call conda activate community_tutorial
+    jupyter notebook
+    call conda deactivate
+) else (
+    rem If community_tutorial environment does not exist, create it from environment.yml
+    echo community_tutorial environment does not exist. Creating...
+    call conda activate
+    conda install -c conda-forge mamba
+    mamba env create -f environment.yml
+    call conda deactivate
+    call conda activate community_tutorial
+    Rscript -e "devtools::install_github('SoloveyMaria/community', upgrade = 'always')"
+    jupyter notebook
+    call conda deactivate
+)
 
-REM Targets
-:create-env
-    SETLOCAL EnableDelayedExpansion
-    FOR /F %%i IN ('where conda.exe') DO (
-        SET CONDA=%%~dpi
-        SET BASE=!CONDA!..\condabin\conda.bat
-    )
-    IF "%CONDA%" == "" (
-        curl -L %MINICONDA_URL% -o miniconda.exe
-        START /WAIT "" miniconda.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%USERPROFILE%\miniconda3
-        DEL /Q miniconda.exe
-        FOR /F %%i IN ('where conda.exe') DO (
-            SET CONDA=%%~dpi
-            SET BASE=!CONDA!..\condabin\conda.bat
-        )
-    )
-    CALL %BASE% activate %CONDA_ENV%
-    IF %ERRORLEVEL% NEQ 0 (
-        CALL %BASE% create -n %CONDA_ENV%
-        CALL %ACTIVATE% %CONDA_ENV%
-        CALL %BASE% install -n %CONDA_ENV% -c conda-forge mamba
-        CALL mamba env update -n %CONDA_ENV% -f environment.yml
-        CALL R -e "devtools::install_github('SoloveyMaria/community', upgrade = 'always'); q()"
-    )
-    CALL %ACTIVATE% %CONDA_ENV%
-    CALL mamba env update -n %CONDA_ENV% -f environment.yml
-    CALL R -e "devtools::install_github('SoloveyMaria/community', upgrade = 'always'); q()"
-
-
-:download-data
-    curl https://zenodo.org/record/7565938/files/anno_cells_corr.txt -o src\anno_cells_corr.txt
-    curl https://zenodo.org/record/7565938/files/anno_samples_corr.txt -o src\anno_samples_corr.txt
-    curl https://zenodo.org/record/7565938/files/counts_corr.csv.gz -o src\counts_corr.csv.gz
-
-:run-jupyter
-    CALL %BASE% activate %CONDA_ENV%
-    START jupyter notebook
-
-:help
-    ECHO Usage:
-    FOR /F "tokens=1,* delims=:?" %%A IN ('FINDSTR /B /R /C:"^[a-zA-Z_-][^=]*:.*?##" "%~dpnx0"') DO (
-        SET "target=%%A"
-        SET "help=%%B"
-        CALL :leftPad target padded 30
-        ECHO   %padded%  %help%
-    )
-    EXIT /B
-
-:leftPad
-    SETLOCAL
-    SET "str=%~1"
-    SET /A len=%~2
-    SET "padChar= "
-    FOR /L %%i IN (1,1,%len%) DO SET "padChar=!padChar! "
-    SET "padded=!padChar!!str!"
-    SET "padded=!padded:~-%len%!"
-    ENDLOCAL & SET "%~3=%padded%"
-    EXIT /B
+pause
