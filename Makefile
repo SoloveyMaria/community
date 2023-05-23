@@ -1,5 +1,5 @@
 # Settings
-CONDA_ENV=community_tutorial
+CONDA_ENV=community2
 SHELL=bash
 MINICONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
@@ -38,9 +38,9 @@ create-env: ## create conda environment
 .PHONY: create-env
 
 download-data: ## download preprocessed data
-	curl https://zenodo.org/record/7565938/files/anno_cells_corr.txt -o src/anno_cells_corr.txt;
-	curl https://zenodo.org/record/7565938/files/anno_samples_corr.txt -o src/anno_samples_corr.txt;
-	curl https://zenodo.org/record/7565938/files/counts_corr.csv.gz -o src/counts_corr.csv.gz
+	curl https://zenodo.org/record/7962808/files/anno_cells_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_corr.txt;
+	curl https://zenodo.org/record/7962808/files/anno_samples_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_samples_corr.txt;
+	curl https://zenodo.org/record/7962808/files/counts_corr.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_corr.csv.gz
 .PHONY: download-data
 
 run-jupyter: ## run jupyter notebooks
