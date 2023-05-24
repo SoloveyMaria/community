@@ -73,6 +73,7 @@ You can download the preprocessed data by running the below command. You can als
 ## Functionality
 The Community package includes the following functions:
 
+- calculate_communication(): calculates communication between cell types based on the provided count data and annotation information.
 - test_diff(): This function performs a differential expression analysis on the inferred interactions.
 - plot_meanLig_vs_meanRec(): This function plots the mean ligand expression vs mean receptor expression.
 - plot_pca(): This function performs a PCA analysis on the input data.
