@@ -16,8 +16,7 @@ If you have ```git``` installed on your system, you can directly clone the repos
     
     git clone https://github.com/SoloveyMaria/community.git
     
-
-Alternatively, you can use the provided **```install_windows```** script (you might need administrative rights) to automate the setup process. Running this script will download and install Conda if it is not already installed on your system. Afterwards, it will create a new Conda environment and install all the dependencies required for the community tool. Upon completion, Jupyter Notebook will open automatically. If you already have all the necessary dependencies installed, the script will only launch Jupyter Notebook.
+Alternatively, you can use the provided **```install_windows```** script (you might need administrative rights) to automate the setup process. Running this script will download and install Conda if it is not already installed on your system. Afterwards, it will create a new Conda environment and install all the dependencies required for the community tool. Upon completion, Jupyter Notebook will open automatically. If you already have all the necessary dependencies installed, the script will only launch Jupyter Notebook.</div>
 
 Please ensure that you have the necessary permissions to run the ```install_windows``` script if you choose to use it.
 
