@@ -29,11 +29,6 @@ Please ensure that you have the necessary permissions to run the ```install_wind
     
     git clone https://github.com/SoloveyMaria/community.git
     
-
-- Navigate to the `community` filder by executing the following command.
-    ```
-    cd community/
-    ```
     
 - If you don't have conda installed yet, install [conda](https://conda.io/miniconda.html) by running the command below
 
