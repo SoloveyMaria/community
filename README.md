@@ -13,9 +13,9 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 ### For Windows Users:
 If you have ```git``` installed on your system, you can directly clone the repository by running the following command in your command prompt or Git Bash:
 
-    ```
+    
     git clone https://github.com/SoloveyMaria/community.git
-    ```
+    
 
 Alternatively, you can use the provided **```install_windows```** script (you might need administrative rights) to automate the setup process. Running this script will download and install Conda if it is not already installed on your system. Afterwards, it will create a new Conda environment and install all the dependencies required for the community tool. Upon completion, Jupyter Notebook will open automatically. If you already have all the necessary dependencies installed, the script will only launch Jupyter Notebook.
 
@@ -27,9 +27,9 @@ Please ensure that you have the necessary permissions to run the ```install_wind
 
 **Note:** You need to have Git installed on your system. If Git is not installed, please download this repository in zip format, decompress it, navigate to the directory, and then open up terminal in this folder. Here is the link to the zip file for this repository. [Click here to download](https://github.com/SoloveyMaria/community/archive/refs/heads/main.zip)   
 
-    ```
+    
     git clone https://github.com/SoloveyMaria/community.git
-    ```
+    
 
 - Navigate to the `community` filder by executing the following command.
     ```
