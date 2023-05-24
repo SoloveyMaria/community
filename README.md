@@ -11,12 +11,16 @@ devtools::install_github("SoloveyMaria/community")
 To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, follow the steps below. All the commands below run in terminal/cmd.
 
 ### Steps to open up terminal for Windows users:
-Below is how you can open up the terminal on the current folder, this would be the folder where you want to store all the files for the workflows and run community.
+### For Windows Users:
+If you have ```git``` installed on your system, you can directly clone the repository by running the following command in your command prompt or Git Bash:
 
-Once you navigate to the desired folder. Press <kbd>CTRL</kbd>+<kbd>D</kbd> then type "cmd" and press <kbd>ENTER</kbd>. 
+    ```
+    git clone https://github.com/SoloveyMaria/community.git
+    ```
 
-You can follow the instrusctions by copy pasting the below commands to the terminal.
+Alternatively, you can use the provided **```install_windows```** script (you might need administrative rights) to automate the setup process. Running this script will download and install Conda if it is not already installed on your system. Afterwards, it will create a new Conda environment and install all the dependencies required for the community tool. Upon completion, Jupyter Notebook will open automatically. If you already have all the necessary dependencies installed, the script will only launch Jupyter Notebook.
 
+Please ensure that you have the necessary permissions to run the ```install_windows``` script if you choose to use it.
 ### Requirements
 
 - Clone the repo with the below command. This will create a folder named "community" in your current directory.
