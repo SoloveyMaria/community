@@ -8,9 +8,8 @@ devtools::install_github("SoloveyMaria/community")
 ```
 ## Tutorial
 
-To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, follow the steps below. All the commands below run in terminal/cmd.
+To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, follow the steps below. All the commands below run in terminal/cmd. 
 
-### Steps to open up terminal for Windows users:
 ### For Windows Users:
 If you have ```git``` installed on your system, you can directly clone the repository by running the following command in your command prompt or Git Bash:
 
@@ -21,7 +20,8 @@ If you have ```git``` installed on your system, you can directly clone the repos
 Alternatively, you can use the provided **```install_windows```** script (you might need administrative rights) to automate the setup process. Running this script will download and install Conda if it is not already installed on your system. Afterwards, it will create a new Conda environment and install all the dependencies required for the community tool. Upon completion, Jupyter Notebook will open automatically. If you already have all the necessary dependencies installed, the script will only launch Jupyter Notebook.
 
 Please ensure that you have the necessary permissions to run the ```install_windows``` script if you choose to use it.
-### Requirements
+
+### Linux/macOS 
 
 - Clone the repo with the below command. This will create a folder named "community" in your current directory.
 
@@ -36,11 +36,6 @@ Please ensure that you have the necessary permissions to run the ```install_wind
     cd community/
     ```
     
-- For windows users execute the below command
-    ```
-    windows.bat create-env
-    ```
-
 - If you don't have conda installed yet, install [conda](https://conda.io/miniconda.html) by running the command below
 
     ```
@@ -67,7 +62,7 @@ Please ensure that you have the necessary permissions to run the ```install_wind
     
 ### Getting preprocessed data
 
-You can download the preprocessed data to /src folder by running the below command. You can also visit the link here https://zenodo.org/record/7565938#.Y9FHVxzMJhE and download manually. In order to run the notebook workflow with the preprocessed data, the files should be under the /src directory. 
+You can download the preprocessed data by running the below command. You can also visit the link here https://zenodo.org/record/7962808 and download manually. In order to run the notebook workflow with the preprocessed data, the files should be under the /docs/showcase_notebooks directory. 
 
 - Download preprocessed data into /src directory
 
