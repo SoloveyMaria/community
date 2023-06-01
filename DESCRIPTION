@@ -15,7 +15,7 @@ Imports:
     gridExtra (>= 2.1),
     grid,
     ComplexHeatmap (>= 2.12.0),
-    dendsort (>= 0.4.0),
+    dendsort (>= 0.3.0),
     igraph (>= 1.3.0),
     circlize (>= 0.4.0),
     R.utils (>= 2.12.0),
