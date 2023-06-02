@@ -25,10 +25,10 @@ If you have ```git``` installed on your system, you can directly clone the repos
     ```
     git clone https://github.com/SoloveyMaria/community.git
     ```
-**Note:** You need to have Git installed on your system. If Git is not installed, please download this repository in zip format, decompress it, navigate to the directory, and then open up terminal in this folder. Here is the link to the zip file for this repository. [Click here to download](https://github.com/SoloveyMaria/community/archive/refs/heads/main.zip)
+**Note:** You need to have Git installed on your system. If Git is not installed, please download this repository in zip format, decompress it, navigate to the directory/folder. Here is the link to the zip file for this repository. [Click here to download](https://github.com/SoloveyMaria/community/archive/refs/heads/main.zip)
 
 
-Once you navigated to cloned/downloaded folder of the repository `(C:\Users\User\Downloads\community)`, you can use the provided **```install_windows```** script (you might need administrative rights) to automate the setup process. Running this script will download and install Conda if it is not already installed on your system. Afterwards, it will create a new Conda environment and install all the dependencies required for the community tool. Upon completion, Jupyter Notebook will open automatically. If you already have all the necessary dependencies installed, the script will only launch Jupyter Notebook.
+Once you navigated to cloned/downloaded folder of the repository `(C:\Users\UserName\Downloads\community)`, you can use the provided **```install_windows```** script (you might need administrative rights) to automate the setup process. You can run this sctips with a double click. Running this script will download and install Conda if it is not already installed on your system. Afterwards, it will create a new Conda environment and install all the dependencies required for the community tool. Upon completion, Jupyter Notebook will open automatically. If you already have all the necessary dependencies installed, the script will only launch Jupyter Notebook.
 
 Please ensure that you have the necessary permissions to run the ```install_windows``` script if you choose to use it.
 
