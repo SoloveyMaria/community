@@ -9,6 +9,8 @@ The `community` tool is a powerful tool with several benefits:
 
 
 ## Installation
+If you are not fimilar with the below code, please follow the next steps to install.
+
 ```r
 # install.packages("devtools")
 devtools::install_github("SoloveyMaria/community")
