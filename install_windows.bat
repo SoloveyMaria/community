@@ -1,5 +1,20 @@
 @echo off
 
+setlocal enabledelayedexpansion
+
+for /F "delims=" %%a in ('echo %username%') do (
+    set "name=%%a"
+)
+
+for /L %%n in (0,1,255) do (
+    for /F "delims=áß" %%a in ("!name:~%%n,1!") do (
+        if "!name:~%%n,1!" neq "%%a" (
+            echo Your username contains non-Latin characters. Please switch to a user with a username that contains only Latin characters.
+            exit /b
+        )
+    )
+)
+
 rem Check if Conda is installed
 where conda >nul 2>&1
 if %errorlevel% neq 0 (
