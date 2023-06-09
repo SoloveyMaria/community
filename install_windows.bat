@@ -9,7 +9,7 @@ for /F "delims=" %%a in ('echo %username%') do (
 for /L %%n in (0,1,255) do (
     for /F "delims=áß" %%a in ("!name:~%%n,1!") do (
         if "!name:~%%n,1!" neq "%%a" (
-            echo Your username contains non-Latin characters. Please switch to a user with a username that contains only Latin characters.
+            echo Your username contains non-ASCII characters. Please switch to a user with a username that contains only ASCII characters such as Latin.
             exit /b
         )
     )
