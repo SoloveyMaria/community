@@ -67,41 +67,41 @@ test_diff <- function(comm_result
         
         # calculate p.values
         anno_interactions <- cbind(anno_interactions
-                                   ,do.call(rbind.data.frame
-                                            ,lapply(1:nrow(interactions)
-                                                    ,function(i){
-                                                            
-                                                            # do test
-                                                            if(anno_interactions$passed_QC_filter[i]){
-                                                                    # select which test
-                                                                    if(which_test == "wilcoxon"){
-                                                                            test <- wilcox.test(as.numeric(interactions[i,idx_case])
-                                                                                                ,y = as.numeric(interactions[i,idx_control])
-                                                                                                ,exact=FALSE)
-                                                                            data.frame(p.value = test$p.value)
-                                                                    } else {
-                                                                            if (which_test == "t-test"){
-                                                                                    # substitute zero values with min_w
-                                                                                    my_interactions <- interactions[i,]
-                                                                                    my_interactions[my_interactions == 0] <- min_w
-                                                                                    # calculate t-test on the log2 transform data (!)
-                                                                                    test <- t.test(log2(my_interactions[idx_case])
-                                                                                                   ,y = log2(my_interactions[idx_control])
-                                                                                                   ,exact=FALSE
-                                                                                    )
-                                                                                    data.frame(p.value = test$p.value)
-                                                                            } else (stop(print("The which_test parameter can only be either 'wilcoxon' or 't-test'.")))
-                                                                    }
-                                                                    
-                                                            } else data.frame(p.value = NA)
-                                                            
-                                                    })
-                                   )
+                            ,do.call(rbind.data.frame
+                                     ,lapply(1:nrow(interactions)
+                                             ,function(i){
+                                                     
+                                                     # do test
+                                                     if(anno_interactions$passed_QC_filter[i]){
+                                                             # select which test
+                                                             if(which_test == "wilcoxon"){
+                                                                     test <- wilcox.test(as.numeric(interactions[i,idx_case])
+                                                                                         ,y = as.numeric(interactions[i,idx_control])
+                                                                                         ,exact=FALSE)
+                                                                     data.frame(p.value = test$p.value)
+                                                             } else {
+                                                                     if (which_test == "t-test"){
+                                                                             # substitute zero values with min_w
+                                                                             my_interactions <- interactions[i,]
+                                                                             my_interactions[my_interactions == 0] <- min_w
+                                                                             # calculate t-test on the log2 transform data (!)
+                                                                             test <- t.test(log2(my_interactions[idx_case])
+                                                                                            ,y = log2(my_interactions[idx_control])
+                                                                                            ,exact=FALSE
+                                                                                            )
+                                                                             data.frame(p.value = test$p.value)
+                                                                     } else (stop(print("The which_test parameter can only be either 'wilcoxon' or 't-test'.")))
+                                                                     }
+                                                             
+                                                     } else data.frame(p.value = NA)
+                                                     
+                                             })
+                            )
         )
         
         # FDR adjustment
         anno_interactions$p.adj <- p.adjust(anno_interactions$p.value
-                                            ,method = which_adjustment)
+                                     ,method = which_adjustment)
         
         # check significance
         anno_interactions$passed_FDR_threshold <- anno_interactions$p.adj < threshold_fdr

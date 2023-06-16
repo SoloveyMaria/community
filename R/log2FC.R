@@ -1,3 +1,6 @@
+# NEW:
+# the minimum value over the dataset, which is used for dummy in cases of zero, is not NOT devided by 10, but kept as it is
+
 #' @title log2FC
 #' 
 #' @description calculates log2FC for a given parameter between the case and the control level. To avoid division by zero, all zero values are substituted by a pseudo-count. The pseudo-count is calculated as the minimum value in the x divided by 10.
@@ -58,8 +61,8 @@ log2FC <- function(x
                 print(min_value)
         }
         
-        # define min count as 1/10 of the min value
-        min_count <- min_value / 10
+        # define min count 
+        min_count <- min_value 
         if(verbose){
                 print("min pseudo-count to substitute zeros is")
                 print(min_count)
