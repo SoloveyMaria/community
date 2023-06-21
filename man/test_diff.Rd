@@ -6,25 +6,28 @@
 \usage{
 test_diff(
   comm_result,
+  which_test = "wilcoxon",
   which_adjustment = "fdr",
+  verbose = TRUE,
   threshold_fdr = 0.1,
   threshold_log2FC = 1,
-  verbose = FALSE,
   ...
 )
 }
 \arguments{
-\item{which_adjustment}{method used for multiple testing correction by the p.adjust function. The default is 'fdr'.}
+\item{comm_result}{list containing information about the interactions, samples, and their annotations.}
+
+\item{which_test}{method used for p-value calculation: "wilcoxon" or "t-test". The default value is "wilcoxon".}
+
+\item{which_adjustment}{method used for multiple testing correction by the p.adjust function. The default value is 'fdr'.}
+
+\item{verbose}{a logical value indicating whether to print progress messages (default: FALSE).}
 
 \item{threshold_fdr}{the p-value threshold for adjusted p-values. The default value is 0.1}
 
 \item{threshold_log2FC}{the Log2 fold-change threshold for significant interactions. The default value is 1.}
 
-\item{verbose}{a logical value indicating whether to print progress messages (default: FALSE).}
-
 \item{...}{Additional parameters passed to the t.test or the wilcoxon test function}
-
-\item{comm_result:}{list containing information about the interactions, samples, and their annotations.}
 }
 \value{
 A comm_result object with the following columns added:
@@ -51,6 +54,7 @@ data("comm_result")
 comm_result <- general_stat(comm_result)
 # test for differential expression
 comm_result <- test_diff(comm_result
+                       , which_test = "wilcoxon"
                        ,which_adjustment = "fdr"
                       ,verbose = TRUE
                      ,threshold_fdr = 0.1
