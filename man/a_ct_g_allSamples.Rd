@@ -36,31 +36,10 @@ list:
 calculates the relative active fraction for each gene in each cell type for all samples.
 }
 \examples{
-counts <- data.frame(
-       gene = c('gene1','gene2','gene3')
-     ,cell1 = c(1,2,3)
-    ,cell2 = c(4,5,6)
-)
-rownames(counts) <- counts$gene
-counts$gene <- NULL
-anno_cells <- data.frame(
-      cell_ID = c('cell1','cell2')
-   , cell_type = c('cell_type1','cell_type2')
-  , sample_ID = c('sample1','sample1')
-)
-anno_interactions <- data.frame(
-     ligand_gene = c('gene1','gene2')
-  , receptor_gene = c('gene2','gene3')
- , cell_type_s = c('cell_type1','cell_type1')
-, cell_type_r = c('cell_type2','cell_type2')
-)
-anno_interactions_allSamples <- list(sample1 = anno_interactions)
-a_ct_g_allSamples(counts
-                 ,anno_cells
-                ,anno_interactions_allSamples
-               ,threshold_expr = 0.05
-             ,threshold_nr_active_cells = 0
-           ,verbose = TRUE
-)
+# load data
+data("counts")
+data("anno_cells")
+data("anno_interactions_allSamples")
+
 
 }

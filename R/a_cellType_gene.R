@@ -15,33 +15,11 @@
 #'
 #' @export
 #' @examples
-#' # create a toy example
-#' cell_types <- c("cell_type1","cell_type2")
-#' counts <- data.frame(
-#'        gene1 = c(0,1,0,1,0,1)
-#'      ,gene2 = c(0,0,1,1,0,0)
-#'     ,gene3 = c(0,0,0,0,1,1)
-#'    ,gene4 = c(0,0,0,0,0,0)
-#'    ,gene5 = c(1,1,1,1,1,1)
-#'   ,gene6 = c(0,0,0,0,0,0)
-#'  ,gene7 = c(1,1,1,1,1,1)
-#' ,gene8 = c(0,0,0,0,0,0)
-#' )
-#' rownames(counts) <- paste0("gene",1:nrow(counts))
-#' colnames(counts) <- paste0("cell",1:ncol(counts))
-#' anno_cells <- data.frame(
-#'       cell_ID = colnames(counts)
-#'    , cell_type = c("cell_type1","cell_type1","cell_type1","cell_type1","cell_type2","cell_type2")
-#'   , sample_ID = c("sample1","sample1","sample1","sample1","sample1","sample1")
-#' )
-#' # run the function
-#' a_cellType_gene(cell_types = cell_types
-#'                ,counts = counts
-#'               ,anno_cells = anno_cells
-#'              ,threshold_expr = 0.05
-#'            ,threshold_nr_active_cells = 0
-#' )
-#'
+#' # load the data
+#' data("counts")
+#' data("anno_cells")
+#' data("cell_types")
+#' 
 a_cellType_gene <- function(cell_types
                             ,counts
                             ,anno_cells # rawnames should be identical to colnames of counts

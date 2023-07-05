@@ -9,19 +9,8 @@
 #' 
 #' @export
 #' @examples
-#' anno_interactions_allSamples <- list(
-#'        sample1 = data.frame(
-#'               gene = c('gene1','gene2','gene3')
-#'              ,a_s_l = c(0.1,0.2,0.3)
-#'             ,a_r_l = c(0.1,0.2,0.3)
-#'       )
-#'     ,sample2 = data.frame(
-#'              gene = c('gene1','gene2','gene3')
-#'            ,a_s_l = c(0.2,0.3,0.4)
-#'           ,a_r_l = c(0.2,0.3,0.4)
-#'    )
-#' )
-#' a_cellType_gene_max(anno_interactions_allSamples)
+#' # load example data
+#' data(example_anno_interactions_allSamples)
 #' 
 a_cellType_gene_max <- function(anno_interactions_allSamples, verbose = FALSE) {
         # calculate max active fraction for ligand in sending cell type
