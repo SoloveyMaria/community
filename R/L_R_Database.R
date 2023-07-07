@@ -10,7 +10,7 @@
 #'
 #' @keywords datasets
 #'
-#' @references iTALK: An Integrated Tool for Ligand-Receptor Interaction Analysis DB
+#' @references OmniPath: guidelines and gateway for literature-curated signaling pathway resources
 #'
 #' @examples
 #' data(LR_database)

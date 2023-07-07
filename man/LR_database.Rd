@@ -18,6 +18,6 @@ data(LR_database)
 head(LR_database)
 }
 \references{
-iTALK: An Integrated Tool for Ligand-Receptor Interaction Analysis DB
+OmniPath: guidelines and gateway for literature-curated signaling pathway resources
 }
 \keyword{datasets}
