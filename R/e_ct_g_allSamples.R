@@ -52,12 +52,12 @@ e_ct_g_allSamples <- function(counts, anno_cells, anno_interactions_allSamples, 
                 matrix_melt <- reshape2::melt(means, value.name = "value")
 
                 anno_interactions_sub=dplyr::left_join(anno_interactions_sub, matrix_melt, 
-                                by = c("ligand_gene_name" = "Var1", "sending_cell_type" = "Var2")) %>% 
-                                dplyr::rename(e_s_l = value)
+                                by = c("ligand_gene_name" = "Var1", "sending_cell_type" = "Var2")) 
+                anno_interactions_sub=dplyr::rename(anno_interactions_sub, e_s_l = value)
 
                 anno_interactions_sub=dplyr::left_join(anno_interactions_sub, matrix_melt, 
-                                by = c("receptor_gene_name" = "Var1", "receiving_cell_type" = "Var2")) %>% 
-                                dplyr::rename(e_r_r = value)
+                                by = c("receptor_gene_name" = "Var1", "receiving_cell_type" = "Var2"))
+                anno_interactions_sub=dplyr::rename(anno_interactions_sub, e_r_r = value)
 
                 #anno_interactions_sub$e_s_l <- diag(as.matrix(means[anno_interactions_sub$ligand_gene_name,
                 #                                                    anno_interactions_sub$sending_cell_type]))
