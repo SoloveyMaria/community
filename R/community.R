@@ -4,6 +4,6 @@
 ## usethis namespace: start
 #' @importFrom gridExtra grid.arrange
 #' @import ggplot2
-#' @importFrom grid textGrob arrangeGrob
+#' @importFrom grid textGrob
 ## usethis namespace: end
 NULL
