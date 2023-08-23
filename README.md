@@ -1,5 +1,5 @@
 # community
-Community is an R package for analyzing single-cell RNA sequencing data to infer interactions between cell types. The package includes functions for preprocessing and quality control, as well as functions for inferring interactions and for analyzing the inferred interactions. 
+Community is an R package designed to explore the differences in communication between various case and control samples using single-cell RNA sequencing (scRNAseq). With its user-friendly output, Community lets you easily follow the overall shifts in communication within the cohorts. You can visualize and delve into the most significant differences in interactions, and even investigate what's driving these changes. It's a handy tool for anyone interested in a deeper understanding of cell-to-cell communication.
 
 The `community` tool is a powerful tool with several benefits:
 
