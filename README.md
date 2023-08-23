@@ -9,13 +9,13 @@ The `community` tool is a powerful tool with several benefits:
 
 
 ## Installation
-If you are not fimilar with the below code, please follow the next steps to install.
+If you are not fimilar with the below code, please follow the next steps to install. We have created a script for Windows users to automatically install all the necesary components (`install_windows.bat`). 
 
 ```r
 # install.packages("devtools")
 devtools::install_github("SoloveyMaria/community")
 ```
-## Tutorial
+## Step by step installation
 
 To create an environment named 'community_tutorial', and install Jupyter Notebook with the R kernel as well as devtools and all the other dependencies, follow the steps below. All the commands below run in terminal/cmd. 
 
