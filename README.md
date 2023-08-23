@@ -22,9 +22,9 @@ To create an environment named 'community_tutorial', and install Jupyter Noteboo
 ### For Windows Users:
 If you have ```git``` installed on your system, you can directly clone the repository by running the following command in your command prompt or Git Bash:
 
-    `
+    
     git clone https://github.com/SoloveyMaria/community.git
-    `
+    
 **Note:** You need to have Git installed on your system. If Git is not installed, please download this repository in zip format, decompress it, navigate to the directory/folder. Here is the link to the zip file for this repository. [Click here to download](https://github.com/SoloveyMaria/community/archive/refs/heads/main.zip)
 
 
