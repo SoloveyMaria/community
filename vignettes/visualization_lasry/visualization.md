@@ -37,6 +37,26 @@ Load functions for visualization.
 data("visualization_functions")
 ```
 
+
+```R
+DEG_Lasry <- read.csv(paste0(path_in,"DEG_significant_table_Lasry.csv")
+                                   ,check.names=FALSE
+                                   ,row.names = 1)
+
+print(str(DEG_Lasry))
+```
+
+    'data.frame':	1358 obs. of  7 variables:
+     $ cluster   : chr  "Mono" "Mono" "Mono" "Mono" ...
+     $ gene      : chr  "ISG15" "RBP7" "C1QA" "CD52" ...
+     $ p_val     : num  0 0 0 0 0 0 0 0 0 0 ...
+     $ avg_log2FC: num  0.692 -0.43 0.369 -0.617 0.674 ...
+     $ pct.1     : num  0.739 0.113 0.36 0.295 0.742 0.489 0.55 0.643 0.412 0.383 ...
+     $ pct.2     : num  0.243 0.473 0.043 0.791 0.224 0.133 0.188 0.061 0.076 0.085 ...
+     $ p_val_adj : num  0 0 0 0 0 0 0 0 0 0 ...
+    NULL
+
+
 ## Parameters
 
 
@@ -237,13 +257,13 @@ plot_nrInt_vs_meanW_perCellType(interactions
 
 
     
-![png](output_18_3.png)
+![png](output_19_3.png)
     
 
 
 
     
-![png](output_18_4.png)
+![png](output_19_4.png)
     
 
 
@@ -287,7 +307,7 @@ plot_vulcano(interactions)
 
 
     
-![png](output_24_0.png)
+![png](output_25_0.png)
     
 
 
@@ -298,6 +318,43 @@ plot_vulcano(interactions)
 library(ComplexHeatmap) # to plot heatmaps
 library(circlize) # for gragient colors
 ```
+
+    Loading required package: grid
+    
+    ========================================
+    ComplexHeatmap version 2.10.0
+    Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+    Github page: https://github.com/jokergoo/ComplexHeatmap
+    Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+    
+    If you use it in published research, please cite:
+    Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+      genomic data. Bioinformatics 2016.
+    
+    The new InteractiveComplexHeatmap package can directly export static 
+    complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+    
+    This message can be suppressed by:
+      suppressPackageStartupMessages(library(ComplexHeatmap))
+    ========================================
+    
+    
+    ========================================
+    circlize version 0.4.15
+    CRAN page: https://cran.r-project.org/package=circlize
+    Github page: https://github.com/jokergoo/circlize
+    Documentation: https://jokergoo.github.io/circlize_book/book/
+    
+    If you use it in published research, please cite:
+    Gu, Z. circlize implements and enhances circular visualization
+      in R. Bioinformatics 2014.
+    
+    This message can be suppressed by:
+      suppressPackageStartupMessages(library(circlize))
+    ========================================
+    
+    
+
 
 
 ```R
@@ -337,7 +394,7 @@ plot_heatmap(interactions
 
 
     
-![png](output_28_0.png)
+![png](output_29_0.png)
     
 
 
@@ -362,7 +419,7 @@ plot_heatmap(interactions
 
 
     
-![png](output_29_0.png)
+![png](output_30_0.png)
     
 
 
@@ -390,7 +447,7 @@ theme(legend.text = element_text(size=16)
 
 
     
-![png](output_31_0.png)
+![png](output_32_0.png)
     
 
 
@@ -400,6 +457,27 @@ theme(legend.text = element_text(size=16)
 ```R
 library(igraph) # to plot circus plots
 ```
+
+    
+    Attaching package: ‘igraph’
+    
+    
+    The following object is masked from ‘package:circlize’:
+    
+        degree
+    
+    
+    The following objects are masked from ‘package:stats’:
+    
+        decompose, spectrum
+    
+    
+    The following object is masked from ‘package:base’:
+    
+        union
+    
+    
+
 
 
 ```R
@@ -420,13 +498,13 @@ plor_celltype_network(interactions
 
 
     
-![png](output_34_0.png)
+![png](output_35_0.png)
     
 
 
 
     
-![png](output_34_1.png)
+![png](output_35_1.png)
     
 
 
@@ -902,7 +980,7 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_45_1.png)
+![png](output_46_1.png)
     
 
 
@@ -952,7 +1030,7 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_46_1.png)
+![png](output_47_1.png)
     
 
 
@@ -1001,7 +1079,7 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_47_1.png)
+![png](output_48_1.png)
     
 
 
@@ -1050,7 +1128,7 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_48_1.png)
+![png](output_49_1.png)
     
 
 
@@ -1099,7 +1177,7 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_49_1.png)
+![png](output_50_1.png)
     
 
 
@@ -1145,7 +1223,7 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_50_1.png)
+![png](output_51_1.png)
     
 
 
@@ -1191,7 +1269,7 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_51_1.png)
+![png](output_52_1.png)
     
 
 
@@ -1246,9 +1324,93 @@ plot_all_forests(my_idx = rep(TRUE,nrow(my_anno_interactions))
 
 
     
-![png](output_53_1.png)
+![png](output_54_1.png)
     
 
+
+
+```R
+idx_sign_lasry <- !is.na(interactions$anno_interactions$sign) & interactions$anno_interactions$sign
+sum(idx_sign_lasry)
+```
+
+
+872
+
+
+
+```R
+# ligands and receptors in the immune interactions: down in Lasry
+idx_down_Lasry_immune <- idx_sign_lasry & (
+    interactions$anno_interactions$log2FC_weights < 0) & (
+    !(grepl("Ery",interactions$anno_interactions$interaction_ID)
+     ) & !(grepl("HSPC", interactions$anno_interactions$interaction_ID))
+)
+```
+
+
+```R
+ligrec_down_Lasry_immune <- unique(c(interactions$anno_interactions$ligand_gene_name[idx_down_Lasry_immune]
+                                               ,interactions$anno_interactions$receptor_gene_name[idx_down_Lasry_immune]
+                                              )
+                                            )
+```
+
+
+```R
+print(str(ligrec_down_Lasry_immune))
+write.csv(ligrec_down_Lasry_immune
+         ,file = paste0(path_in,"ligrec_downImmune_Lasry.csv")
+         ,row.names=FALSE
+         ,quote=FALSE)
+```
+
+     chr [1:143] "RETN" "PTGS2" "CD14" "FCAR" "GNAI2" "THBS1" "AGTRAP" "CD99" ...
+    NULL
+
+
+
+```R
+# ligands and receptors: good quality in Lasry (background set)
+idx_good <- interactions$anno_interactions$passed_QC_filter
+ligrec_goodQuality_Lasry <- unique(c(interactions$anno_interactions$ligand_gene_name[idx_good]
+                                               ,interactions$anno_interactions$receptor_gene_name[idx_good]
+                                              )
+                                            )
+
+```
+
+
+```R
+print(str(ligrec_goodQuality_Lasry))
+write.csv(ligrec_goodQuality_Lasry 
+         ,file = paste0(path_in,"ligrec_goodQuality_Lasry.csv")
+         ,row.names=FALSE
+         ,quote=FALSE)
+```
+
+     chr [1:428] "AGTRAP" "ARF6" "B2M" "CALR" "CCL3" "CD1D" "CD99" "CIRBP" ...
+    NULL
+
+
+
+```R
+# random 387 genes
+ligrec_random <- ligrec_goodQuality_Lasry[sample.int(660, 387)]
+print(length(unique(ligrec_random)))
+
+```
+
+    [1] 237
+
+
+
+```R
+write.csv(ligrec_random
+         ,file = "ligrec_random_Lasry.csv"
+         ,row.names=FALSE
+         ,quote=FALSE)
+```
 
 
 ```R
