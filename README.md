@@ -1,7 +1,15 @@
 # community
 `community` is an R package designed to explore the differences in communication between various case and control samples using single-cell RNA sequencing (scRNAseq). With its user-friendly output, `community` lets you easily follow the overall shifts in communication within the cohorts. You can visualize and delve into the most significant differences in interactions, and even investigate what's driving these changes. It's a handy tool for anyone interested in a deeper understanding of cell-to-cell communication.
 
-The `community` tool is a powerful tool with several benefits:
+# What's Inside This Repo
+In this repository, you'll find:
+
+- Guidelines on how to leverage the `community` tool effectively
+- Methods to visualize output results on preprocessed data
+- Insights into the construction of our database
+- Instructions for preprocessing raw data across multiple datasets
+
+# The `community` tool is a powerful tool with several benefits:
 
 1.  **Compensatory Mechanism Analysis:** Another important aspect offered by the tool is the ability to analyze compensatory mechanisms. Compensatory mechanisms refer to the ways in which cells or organisms compensate for changes or disruptions in a biological process. By using the tool, you can explore and gain insights into the compensatory mechanisms employed by the components in your dataset.
 2.  **LogFC Visualization:** The tool provides the ability to visualize LogFC (log-fold change) for each component. LogFC is a measure used to assess the magnitude of change in gene expression between different conditions or groups. With this feature, you can easily analyze and compare the expression levels of different components in your dataset.
