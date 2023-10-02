@@ -81,6 +81,17 @@ You can download the preprocessed data by running the below command. You can als
     make download-data
     ```
     
+### Step-by-Step Preprocessing
+
+For each dataset, we provide tailored preprocessing workflows. These workflows encompass:
+
+- Initial Data Cleaning and Annotation
+- Filtering
+- Normalization
+- Batch Correction (if applicable)
+- Data Visualization
+
+For a comprehensive overview of our preprocessing steps, please follow this [link](https://github.com/colomemaria/community-paper/tree/main/src/data_preprocessing).
     
 ## Functionality
 The Community package includes the following functions:
