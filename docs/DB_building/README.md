@@ -1,66 +1,54 @@
 A brief description of the workflow for building the Ligand-Receptor database for community tool
 ========
 
-We utilize two main interaction databases from OmniPath (Türei et al., 2021): the [`ligrec extra`](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html), and the [`curated ligand-receptor interactions`](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html). To retrieve the databases we make use of OmnipathR package (Valdeolivas et al., 2019) which is a client for the OmniPath web service (https://www.omnipathdb.org).
+### Construction of the database
 
-Cellular interactions can occur between individual genes or proteins, where one acts as a transmitter (ligand, L1) and the other as a receiver (receptor, R1). This binary interaction can be represented as L1_R1. However, in some cases, these components can be composed of multiple genes or proteins. These members of a complex may share certain roles or functions, such as all members being receptors or ligands. Alternatively, the complex may be comprised of a mixture of components, such as one ligand and one receptor or one ligand and two receptors, and so on.
+There are various databases for biological interactions due to the diverse nature of molecular interactions such as Ligand-Receptor, Enzyme-Substrate, Protein Protein Interactions (PPI) and cell-cell adhesion molecules. Each of these interactions plays a crucial role in biological processes. However, the challenge arises from the differing data formats, coverage, and quality among these databases. We carefully considered several factors to address these challenges to build a comprehensive and reliable database. We needed a database that could offer a wide range of biological interactions, integrate data from various sources and maintain high standards of data quality and coverage. For example, we cross-referenced the interactions with various sources to remove the inaccurate, ensuring that only interactions supported by multiple sources were included into the database (consistency). Additionally, prioritizing interactions that are particularly relevant to intercellular communication processes, filtering out noise and irrelevant entries. 
 
-All communication tools have a way of scoring interactions by measuring changes. For example, the communication tool assigns weights by calculating rho, phi, and mean values. However, one of the main reasons we do not include complexes in our database is that if a weight value is assigned to a complex, the user would not know how much each component contributes. In other words, the user would not be able to determine which component was affected by any changes observed. Furthermore, the composition of complexes can vary naturally between different cell types, and if the database does not capture this, none of the components will be present. Conversely, using components separately enables users to check how each component behaves individually.
+We picked [OmniPath](https://omnipathdb.org/) ([Türei et al., 2021](https://www.embopress.org/doi/full/10.15252/msb.20209923)) as our database of choice which integrates a vast array of biological interactions and features from 103 databases, including well known databases such as Signor, Reactome and Inact. This integration includes protein-protein interactions (PPI), signaling pathways, regulatory interactions and other molecular interactions as well as annotations of protein function, structure and expression. This unified resource enables researchers to carry out cross database analysis and data interoperability. 
 
-Therefore, we break down these complexes into their individual components, identify their functions as transmitters (ligand) or receivers (receptor), and detect their possible connections. These steps are discussed below in detail.
+We utilized a combination of datasets from OmniPath to build our database, specifically focusing on interactions from the “[`ligrec extra`](https://r.omnipathdb.org/reference/import_ligrecextra_interactions.html)” , containing ligand-receptor interactions without literature reference (total of 8234 interactions as of July 2023), [`curated ligand-receptor interactions`](https://r.omnipathdb.org/reference/curated_ligand_receptor_interactions.html) (total of 5057 interactions as of July 2023). Besides these, we also make use of intercell annotation dataset that provides information on the roles of individual proteins whether a protein is a ligand, a receptor or an extracellular matrix (ECM) component (total number of annotations 323572 as of July 2023). These datasets were adopted based on their relevance to intercellular communication and their ability to enhance the accuracy and coverage. We aim to create a robust and reliable resource that accurately captures the complex landscape of cellular interactions. 
 
-#### Step 1: break down complexes
- 
- To accomplish this, we rely on the [`OmniPath intercellular communication role annotation database`](https://r.omnipathdb.org/reference/import_omnipath_intercell.html) to indetify the functions of the component and [`Intercellular communication network`](https://r.omnipathdb.org/reference/import_intercell_network.html) to detect their binary connections.
+In our database construction, we considered both binary and complex interactions within the “ligrec extra” and curated ligand-receptor interactions datasets. Cellular interactions can occur between individual proteins, where one acts as a transmitter (Ligand, L1) and the other as a receiver (Receptor, R1). This binary interaction can be represented as L1_R1. However, in some cases, these components can be composed of multiple proteins, forming a complex molecule for the transmitter or the receiver side of the interaction. These members of a complex may share certain roles or functions, such as all members being ligands or receptors. Alternatively, the complex may be composed of a mixture of components, such as one ligand and one receptor or one ligand and two receptors, and so on. 
 
-Lets assume a complex G1_G2 _G3 is linked to a complex G4_G5_G6 to make a complex interaction G1_G2_G3_G4_G5_G6. We break down the complexes into their components and make a list of transmitter-receiver  pairs by concatenating all the combinations. ~~produce all the possible binary pairwise combinations~~.
+All communication tools have a way of scoring interactions. For example, the community tool assigns weights by calculating rho, phi and mean values. However, if a weight value is assigned to a complex, the user would not know how much each component contributes. In other words, the user would not be able to determine which component was affected by any changes observed. Furthermore, the composition of complexes can vary naturally between different cell types, and if the database does not capture this, none of the components will be present. Thus, we do not directly include the interactions where one of the components is designated as a complex. Instead, we break down these into a binary interaction, identify their functions as transmitters (ligand) or receivers (receptor) and detect their possible connections. These steps are discussed below in detail. 
 
+##### Step 1: Break down complexes and detect pairs
 
-| transmitter | receiver | pair  | complex_origin    |
-| :---------- | :------- | :---- | :---------------- |
-| G1          | G2       | G1_G2 | G1_G2_G3_G4_G5_G6 |
-| G1          | G3       | G1_G3 | G1_G2_G3_G4_G5_G6 |
-| G1          | G4       | G1_G4 | G1_G2_G3_G4_G5_G6 |
-| G1          | G5       | G1_G5 | G1_G2_G3_G4_G5_G6 |
-| G1          | G6       | G1_G6 | G1_G2_G3_G4_G5_G6 |
-| G2          | G1       | G2_G1 | G1_G2_G3_G4_G5_G6 |
-| G2          | G3       | G2_G3 | G1_G2_G3_G4_G5_G6 |
-| ..          | ..       |       | G1_G2_G3_G4_G5_G6 |
+Let's assume a ligand, L1, is linked to a receptor complex, R1_R2, this pair can be shown as L1_R1_R2. We break it down by producing all the possible binary pairwise combinations (Table X: ). After obtaining the binary pairs of these complex molecules, the pairs are checked against the PPI interaction network of OmniPath, the largest dataset of its kind, containing 142 interaction resources (as of July 2023).  However, we are aware that it might contain a number of false positives. Not only the pairs that are detected through PPI, but also the binary pairs that are coming from the original datasets (ligrec extra and curated ligand-receptor interactions).
 
 
-#### Step 2: detect pairs
+| Ligand | Receptor | Pair  | Complex_origin |
+|--------|----------|-------|----------------|
+| L1     | R1       | L1_R1 | L1_R1_R2       |
+| L1     | R2       | L1_R2 | L1_R1_R2       |
+| R1     | L1       | R1_L1 | L1_R1_R2       |
+| R1     | R2       | R1_R2 | L1_R1_R2       |
+| R2     | L1       | R2_L1 | L1_R1_R2       |
+| R2     | R1       | R2_R1 | L1_R1_R2       |
 
-After obtaining the binary interactions of complex molecules, the interactions are checked against a large interaction network, which is the [all post-translational datasets of OmniPath](https://r.omnipathdb.org/reference/import_post_translational_interactions.html), the largest database of its kind, containing [139 interaction databases](https://r.omnipathdb.org/reference/get_interaction_resources.html)  as of March 2023. However, the creators of this network have noted that it may contain a significant number of false positives. Therefore, to mitigate this issue, an additional step is taken to eliminate false positive interactions using an annotation database that categorizes the components into ligand or receptor. Specifically, interactions in which a component is annotated as a receptor but is listed in the "source" column (which is designated for transmitters) of the interaction network, or vice versa for ligands, are discarded. This approach ensures that only valid interactions between ligands and receptors are retained.
+In addition to considering the presence of false positives in the PPI network and the original datasets, there is another factor that needs to be taken into account. Some ligand-receptor pairs (L1_R1) may have the components in swapped order, meaning that the receptor is listed before the ligand (R1_L1). However, in our database, the pairs are consistently indicated as L1_R1 with a specific directionality. 
+
+Furthermore, there may be cases where swapped duplicates exist, where a ligand-receptor pair appears multiple times with the components in both orders. For example, there may be instances where L1_R1 and R1_L1 are both present as separate entries. 
 
 
-#### Step 3: annotate individual components
+Considering these factors, it is important to handle the swapped order and swapped duplicate cases appropriately to ensure the accuracy and integrity of your database, while maintaining the consistent directionality of the ligand-receptor pairs as (L1_R1).
 
-We annotate each individual component by using the [`OmniPath intercellular communication role annotation database`](https://r.omnipathdb.org/reference/import_omnipath_intercell.html).
-If at least two databases categorize a component as a ligand or receptor, it is annotated as such. If not, we check other possible categories such as 
-*extracellular matrix*, *secreted*, and *transmembrane*. We categorize *extracellular matrix* and *secreted* as transmitter (ligand) while for transmembranes we do a manual annotation through genecards and UniProt.
 
-These steps are done separetely for each datasets, namely, `ligrec extra`, and the `curated ligand-receptor interactions`.
 
-#### Step 4: add gene descriptions
-As the last step in our pipeline, we add gene names to each individual gene in our database by using publicly available gene annotation resource, namely, MyGene.info web service, which provides comprehensive annotation information for gene and protein data (Xin et al., 2016). This additional information provides users with a more comprehensive understanding of the biological processes and pathways associated with each gene, enabling them to quickly and efficiently explore the functional implications and potential interactions of the complex molecules and their components in our database. By incorporating gene names alongside gene symbols, we aim to enhance the accessibility and interpretability of our database for researchers across a variety of fields, from computational biology to systems pharmacology.
+To address these possibilities, we utilize the Intercellular communication network dataset from OmniPath. This dataset combines information from 44 resources (as of July 2023), resulting in a total of 301,777 annotations about the intercellular communication roles of proteins. We annotate all the genes in our database based on these annotations. If a gene is categorized as a ligand or receptor by at least two resources, we classify it as a true ligand or receptor. In cases where genes such as integrins or cadherins are involved, we annotate them as adhesion molecules.
 
-The purpose of this column becomes evident in step 5, where we utilize it to curate our database.
+By tagging the true ligand-receptor interactions (True_LR) in our database, users can easily subset and identify these specific interactions. Additionally, if a true ligand-receptor interaction is found in a swapped position, we correct the order accordingly.
 
-#### Step 5: curation
+For adhesion molecules, we handle swapped duplicates by only retaining the interaction present in the True_LR set and discarding the swapped pair from the adhesion molecule database. In situations where there are swapped duplicates within the adhesion molecule classification, we assess the consensus directionality among the resources. We retain the interactions that have a consensus agreement in directionality, and if there is no consensus, we prioritize the interaction based on lexicographical order. The final database includes 6941 pairs, 
 
-We have noticed that some gene pairs are appearing as swapped pairs, meaning that a gene C1 is linked to C2 and vice versa, with C2 being linked to C1. Upon investigating, we found that these pairs are originating from the binary interactions of the two datasets (ligrec extra and the curated ligand-receptor interactions) which we had taken as they are.
+To provide additional information about each individual gene in our database, we incorporate gene descriptions using the publicly available gene annotation resource, MyGene.info web service. This resource offers comprehensive annotation information for gene and protein data (Xin et al., 2016). By including gene descriptions alongside gene symbols, we aim to enhance the understanding of the biological processes and pathways associated with each gene, facilitating exploration of the functional implications and potential interactions of the complex molecules and their components in our database.
 
-To resolve this issue, we first designate plexin, neuroligin, and ADAM family genes as ligands. If any of these genes appear in the receptor column, we discard them. Additionally, we cross-check the gene name annotations from the previous step and remove those pairs where the annotation indicates a receptor under the ligand column.
+Lastly, we append all the column information from OmniPath to our database. This includes detailed information such as sources, references, the number of curation efforts, and the number of resources for each interaction. By including this information, we aim to improve the transparency and reliability of the data. Users can easily track and verify the sources and level of curation for each interaction, enhancing their confidence in the database.
 
-Furthermore, for genes whose names do not include the keywords of ligand/receptor, such as gene "BMP2" "bone morphogenetic protein 2", we perform a manual correction. We have curated a list of genes that require manual curation, which includes ligands such as AGRN, BMP2, BMP4, VTCN1, CD244, CD38, GAS6, GDNF, GUCA2A, HHLA2, IHH, PSEN1, NLGN, NRTN, RPH3A, SHH, FLT3LG and receptors such as CD2, CD27, CD80, CD86, SELL, CD44, CD81, CD8A, CLEC1B, GLG1, TYROBP, and FLT3.
 
-After addressing the swapped pairs issue by assigning certain genes as transmitters and manually curating the pairs, we still encountered other pairs that appeared as swapped. To resolve these, we checked if there was a consensus agreement on the direction between resources. If there was no agreement, we picked the direction that came first alphabetically. This step ensured that the interactions in our dataset were consistent and reliable.
+Overall, through these steps and the inclusion of additional information, we aim to construct a comprehensive and reliable database that accurately captures the complex landscape of biological interactions.
 
-#### Step 6: append columns from OmniPath
-
-We reorder the columns and rename them to ensure consistency across all the datasets, `ligrec extra`, and the `curated ligand-receptor interactions`. This results in a clean and organized database of ligand-receptor interactions. Additionally, we append all of the column information that originates from OmniPath to our database. This allows users to track and see detailed information such as the sources, references, number of curation efforts, 
-and number of resources for each interaction. By including this information, we hope to improve the transparency and reliability of the data, 
-as users can easily verify the sources and level of curation for each interaction.
 
 #### References
 1. Türei, D., Korcsmáros, T., & Saez-Rodriguez, J. (2016). OmniPath: guidelines and gateway for literature-curated signaling pathway resources. Nature methods, 13(12), 966–967. https://doi.org/10.1038/nmeth.4077
