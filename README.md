@@ -124,6 +124,36 @@ If you want to make a XXXXX plots visualization of the community output, you can
 
 - [community visualization on Lasry dataset: ](vignettes/visualization_lasry/visualization.md)
 
+## FAQ:
+
+#### How to Choose the Right Seurat Data Slot for Input Count Matrix?
+
+
+**Q:** I have X number of samples in a Seurat object. Which data slot should I use as the input count matrix?
+
+**A:** If you're working with a Seurat object, you have multiple options for your input count matrix:
+- **Normalized Counts:** The preferred choice, especially for setting meaningful expression levels (`threshold_expr`).
+- **Log-Normalized Counts:** A viable alternative, but requires extra caution with `threshold_expr`.
+- **Integrated Counts:** Can be used but may introduce artifacts, particularly with lowly expressed genes. Ideal if you're dealing with significant batch effects.
+
+#### Can I Use Community Analysis for Samples with Low Cell Type Frequencies?
+
+**Q:** My scRNA dataset has limited cell type diversity. Is it suitable for Community analysis?
+
+**A:** Absolutely, `community` analysis is not solely dependent on the size of each cell type population. Here's what you should consider:
+
+-    **Presence Across Samples:** A cell type should ideally be present in almost all samples. Missing in one or two samples is generally acceptable.
+-    **Minimum Cell Count:** Decide on a threshold for the minimum number of cells of a particular type in a sample. The default in Community is six cells per type per sample.
+
+For more details on filtering based on these criteria that we used, refer to the [Data Pre-Processing Notebook](https://github.com/colomemaria/community-paper/blob/main/src/data_preprocessing/Lasry/2.filtering.ipynb).
+
+
+#### Is Annotation of Healthy vs. Malignant Cells Necessary?
+
+**Q:** Do I need to differentiate between healthy and malignant B cells when annotating my samples?
+
+**A:** No special annotation is required for malignant B cells. You can categorize them under the general "B cell" type. The algorithm will distinguish between the two populations through the "active fraction" component, effectively capturing the nuances.
+
 ## Contribution
 
 We welcome contributions from other developers. To contribute to community, please fork the repository, make your changes and submit a pull request.
