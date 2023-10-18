@@ -116,11 +116,10 @@ The Community package includes the following functions:
 
 To learn using `community`, read one of the following vignettes:
 
-Following vignette contains the explanation on how to perform a basic communication, QC and differential communication analysis. This includes ....... This demo analysis takes only a few minutes to run:
-
+Following vignette contains the explanation on how to perform a basic communication, QC, and differential communication analysis. This includes guidelines on data preprocessing, running the main analysis functions, and interpreting the results. This analysis takes only a few minutes to run: 
 - [community analysis on Lasry dataset: ](vignettes/calculate_communication_lasry/calculate_communication.md)
 
-If you want to make a XXXXX plots visualization of the community output, you can check following vignettes:
+If you want to make a comprehensive plots visualization of the community output, you can check following vignettes:
 
 - [community visualization on Lasry dataset: ](vignettes/visualization_lasry/visualization.md)
 
