@@ -12,8 +12,11 @@ In this repository, you'll find:
 # The `community` tool is a powerful tool with several benefits:
 
 1.  **Compensatory Mechanism Analysis:** Another important aspect offered by the tool is the ability to analyze compensatory mechanisms. Compensatory mechanisms refer to the ways in which cells or organisms compensate for changes or disruptions in a biological process. By using the tool, you can explore and gain insights into the compensatory mechanisms employed by the components in your dataset.
-2.  **LogFC Visualization:** The tool provides the ability to visualize LogFC (log-fold change) for each component. LogFC is a measure used to assess the magnitude of change in gene expression between different conditions or groups. With this feature, you can easily analyze and compare the expression levels of different components in your dataset.
-3.  .... more
+
+2.  **Speed and Efficiency:** `community` is built for speed, making it suitable for large-scale scRNAseq datasets without high computational demands.
+3.  **Robustness:** Our tool employs rigorous statistical methods along with multi-factor analysis to ensure the reliability of the results. This makes it less sensitive to outlier samples, providing more accurate differential communication analysis.
+4.  **Intuitive Visualization:** The tool offers straightforward graphical outputs, simplifying the understanding of complex cell interactions.
+5.  **User-Friendly:** With an easy-to-use workflow and detailed documentation, the tool is designed for users of varying technical backgrounds.
 
 
 ## Installation
