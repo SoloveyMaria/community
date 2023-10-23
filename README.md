@@ -104,17 +104,6 @@ For each dataset, we provide tailored preprocessing workflows. These workflows e
 
 For a comprehensive overview of our preprocessing steps, please follow this [link](https://github.com/colomemaria/community-paper/tree/main/src/data_preprocessing).
     
-## Functionality
-The Community package includes the following functions:
-
-- test_diff(): This function performs a differential expression analysis on the inferred interactions.
-- plot_meanLig_vs_meanRec(): This function plots the mean ligand expression vs mean receptor expression.
-- plot_pca(): This function performs a PCA analysis on the input data.
-- rescale(): This function rescales the input data.
-- rho_cellType(): This function calculates the relative fraction of cell types.
-- rho(): This function calculates the rho values.
-- w(): This function calculates the weight of the interactions between two nodes based on fraction of cells and expression based probability of interaction
-
 ## Documentation
 
 To learn using `community`, read one of the following vignettes:
