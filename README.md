@@ -152,3 +152,7 @@ We welcome contributions from other developers. To contribute to community, plea
 ## Contact
 
 If you have any questions or suggestions, please contact me at maria.solovey@bmc.med.lmu.de
+
+## Cite the tool
+
+Citation will be added soon.
