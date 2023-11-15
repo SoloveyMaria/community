@@ -55,9 +55,9 @@ create-env: ## create conda environment
 .PHONY: create-env
 
 download-data: ## download preprocessed data
-	curl https://zenodo.org/record/7962808/files/anno_cells_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_corr.txt;
-	curl https://zenodo.org/record/7962808/files/anno_samples_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_samples_corr.txt;
-	curl https://zenodo.org/record/7962808/files/counts_corr.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_corr.csv.gz
+	curl https://zenodo.org/records/10125580/files/anno_cells_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_corr.txt;
+	curl https://zenodo.org/records/10125580/files/anno_samples_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_samples_corr.txt;
+	curl https://zenodo.org/records/10125580/files/counts_corr.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_corr.csv.gz
 .PHONY: download-data
 
 run-jupyter: ## run jupyter notebooks
