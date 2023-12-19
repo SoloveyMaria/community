@@ -45,12 +45,12 @@ install-conda: ## install Miniconda
 create-env: ## create conda environment
 	if ${CONDA} env list | grep ${CONDA_ENV}; then \
 	   mamba env update -n ${CONDA_ENV} -f environment.yml; \
-	   source ${ACTIVATE} ${CONDA_ENV} && R -e 'devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
+	   source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
 	else \
 	    ${CONDA} install -n base -c conda-forge mamba && \
 	    source ${ACTIVATE} base && \
 	    mamba env create -f environment.yml && \
-	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
+	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
 	fi
 .PHONY: create-env
 
