@@ -1,5 +1,5 @@
 # Settings
-CONDA_ENV=community2
+CONDA_ENV=community_tutorial
 SHELL=bash
 MINICONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
@@ -25,7 +25,7 @@ else
     CONDA := $(strip $(shell which conda))
 endif
 
-CONDA := ${HOME}/miniconda3/bin/conda
+
 BASE := $(shell dirname $(shell dirname ${CONDA}))
 
 ACTIVATE=${BASE}/bin/activate
