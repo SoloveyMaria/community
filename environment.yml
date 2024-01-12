@@ -1,4 +1,4 @@
-name: community_tutorial
+name: community_tutorial2
 channels:
 - conda-forge
 - bioconda
@@ -23,3 +23,10 @@ dependencies:
 - r-ggrepel
 - bioconductor-omnipathr
 - bioconductor-mygene
+- pandas==1.5.3
+- scanpy
+- python-igraph
+- leidenalg
+- anndata
+- matplotlib
+- scipy
