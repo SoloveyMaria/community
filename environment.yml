@@ -1,4 +1,4 @@
-name: community_tutorial2
+name: community_tutorial
 channels:
 - conda-forge
 - bioconda
