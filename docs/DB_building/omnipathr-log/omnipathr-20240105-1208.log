@@ -1,0 +1,24 @@
+[2024-01-05 12:08:49] [INFO]    [OmnipathR] Welcome to OmnipathR!
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] Reading JSON from `/home/mami/.cache/OmnipathR/cache.json` (encoding: UTF-8).
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-01-05 12:08:49] [INFO]    [OmnipathR] Initialized cache: `/home/mami/.cache/OmnipathR`.
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] Reading JSON from `/home/mami/R/x86_64-pc-linux-gnu-library/4.1/OmnipathR/db/db_def.json` (encoding: UTF-8).
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] Reading JSON from `/home/mami/R/x86_64-pc-linux-gnu-library/4.1/OmnipathR/internal/magic_bytes.json` (encoding: UTF-8).
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] Reading JSON from `/home/mami/R/x86_64-pc-linux-gnu-library/4.1/OmnipathR/internal/urls.json` (encoding: UTF-8).
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] Reading JSON from `/home/mami/R/x86_64-pc-linux-gnu-library/4.1/OmnipathR/internal/id_types.json` (encoding: UTF-8).
+[2024-01-05 12:08:49] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-01-05 12:09:14] [TRACE]   [OmnipathR] Loaded data from RDS `/home/mami/.cache/OmnipathR/0fbfb4de77ad3ee1c1676ccf1db67b570530f02f-1.rds`.
+[2024-01-05 12:09:14] [INFO]    [OmnipathR] Loaded from cache: `https://omnipathdb.org/interactions?genesymbols=yes&datasets=ligrecextra&organisms=9606&fields=sources,references,curation_effort&license=academic`
+[2024-01-05 12:09:14] [SUCCESS] [OmnipathR] Loaded 8350 interactions from cache.
+[2024-01-05 12:09:15] [TRACE]   [OmnipathR] Loaded data from RDS `/home/mami/.cache/OmnipathR/2ca0b32a5eda2799cb44960b1f8b611cb1b73de5-1.rds`.
+[2024-01-05 12:09:15] [INFO]    [OmnipathR] Loaded from cache: `https://omnipathdb.org/interactions?genesymbols=yes&datasets=omnipath,pathwayextra,kinaseextra,ligrecextra&organisms=9606&fields=sources,references,curation_effort&license=academic`
+[2024-01-05 12:09:17] [SUCCESS] [OmnipathR] Loaded 80237 interactions from cache.
+[2024-01-05 12:09:26] [TRACE]   [OmnipathR] Loaded data from RDS `/home/mami/.cache/OmnipathR/0fbfb4de77ad3ee1c1676ccf1db67b570530f02f-1.rds`.
+[2024-01-05 12:09:26] [INFO]    [OmnipathR] Loaded from cache: `https://omnipathdb.org/interactions?genesymbols=yes&datasets=ligrecextra&organisms=9606&fields=sources,references,curation_effort&license=academic`
+[2024-01-05 12:09:26] [SUCCESS] [OmnipathR] Loaded 8350 interactions from cache.
+[2024-01-05 12:09:27] [TRACE]   [OmnipathR] Loaded data from RDS `/home/mami/.cache/OmnipathR/2ca0b32a5eda2799cb44960b1f8b611cb1b73de5-1.rds`.
+[2024-01-05 12:09:27] [INFO]    [OmnipathR] Loaded from cache: `https://omnipathdb.org/interactions?genesymbols=yes&datasets=omnipath,pathwayextra,kinaseextra,ligrecextra&organisms=9606&fields=sources,references,curation_effort&license=academic`
+[2024-01-05 12:09:29] [SUCCESS] [OmnipathR] Loaded 80237 interactions from cache.

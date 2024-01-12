@@ -21,3 +21,5 @@ dependencies:
 - r-r.utils
 - r-data.table
 - r-ggrepel
+- bioconductor-omnipathr
+- bioconductor-mygene

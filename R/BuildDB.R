@@ -10,7 +10,7 @@
 #' @return Depending on the selected database type, this function returns either a dataframe
 #'         of non-curated interactions, curated interactions, or a combined dataframe of both.
 #'         If "both" is selected, it also provides a count of interaction pairs by their annotation strategy.
-#' @importFrom OmnipathR import_ligrecextra_interactions curated_ligand_receptor_interactions
+#' @importFrom OmnipathR import_ligrecextra_interactions curated_ligand_receptor_interactions import_post_translational_interactions
 #' @import dplyr
 #' @import tidyverse
 #'
