@@ -19,3 +19,6 @@ docs/showcase_notebooks/Simillie/input_data/counts_corr.csv.gz
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
 docs/showcase_notebooks/Lasry/input_data/counts_corr.csv.gz
 docs/showcase_notebooks/Lasry/input_data/lasry_corr_norm.h5ad
+.git/objects/pack/pack-4cfe742f1e823b6951f238ef208e60d8947478ca.pack
+docs/showcase_notebooks/Simillie/input_data/counts_norm.csv.gz
+docs/showcase_notebooks/Lasry/input_data/counts_norm.csv.gz

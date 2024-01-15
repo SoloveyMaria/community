@@ -55,10 +55,10 @@ create-env: ## create conda environment
 .PHONY: create-env
 
 download-lasry: ## download preprocessed data
-	curl https://zenodo.org/records/10125580/files/anno_cells_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_corr.txt;
-	curl https://zenodo.org/records/10125580/files/anno_samples_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_samples_corr.txt;
-	curl https://zenodo.org/records/10125580/files/anno_genes_corr.txt -o docs/showcase_notebooks/Lasry/input_data/anno_genes_corr.txt;
-	curl https://zenodo.org/records/10125580/files/counts_corr.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_corr.csv.gz
+	curl https://zenodo.org/records/10513005/files/anno_cells_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_norm.txt;
+	curl https://zenodo.org/records/10513005/files/anno_samples_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_samples_norm.txt;
+	curl https://zenodo.org/records/10513005/files/anno_genes_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_genes_norm.txt;
+	curl https://zenodo.org/records/10513005/files/counts_norm.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_norm.csv.gz
 .PHONY: download-lasry
 
 download-vangalen: ## download preprocessed data
@@ -69,9 +69,10 @@ download-vangalen: ## download preprocessed data
 .PHONY: download-vangalen
 
 download-simillie: ## download preprocessed data
-	curl https://zenodo.org/records/10013294/files/anno_cells_corr.txt -o docs/showcase_notebooks/Simillie/input_data/anno_cells_corr.txt;
-	curl https://zenodo.org/records/10013294/files/anno_samples_corr.txt -o docs/showcase_notebooks/Simillie/input_data/anno_samples_corr.txt;
-	curl https://zenodo.org/records/10013294/files/counts_corr.csv.gz -o docs/showcase_notebooks/Simillie/input_data/counts_corr.csv.gz
+	curl https://zenodo.org/records/10512663/files/anno_cells_norm.txt -o docs/showcase_notebooks/Simillie/input_data/anno_cells_norm.txt;
+	curl https://zenodo.org/records/10512663/files/anno_samples_norm.txt -o docs/showcase_notebooks/Simillie/input_data/anno_samples_norm.txt;
+	curl https://zenodo.org/records/10512663/files/anno_genes_norm.txt -o docs/showcase_notebooks/Simillie/input_data/anno_genes_norm.txt;
+	curl https://zenodo.org/records/10512663/files/counts_norm.csv.gz -o docs/showcase_notebooks/Simillie/input_data/counts_norm.csv.gz
 .PHONY: download-simillie
 
 run-jupyter: ## run jupyter notebooks
