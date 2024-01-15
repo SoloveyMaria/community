@@ -2,7 +2,6 @@
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_cells_corr.txt docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_genes_corr.txt docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_samples_corr.txt docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_cells_corr.txt docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_genes_corr.txt docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_samples_corr.txt docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
-docs/showcase_notebooks/vanGalen_Hourigan/input_data/**/*
 .git/objects/pack/pack-21aca1fcc96780b2a53472a9b408ff63a129d8d5.pack
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
 docs/showcase_notebooks/Lasry/input_data/counts_corr.csv.gz
@@ -22,3 +21,14 @@ docs/showcase_notebooks/Lasry/input_data/lasry_corr_norm.h5ad
 .git/objects/pack/pack-4cfe742f1e823b6951f238ef208e60d8947478ca.pack
 docs/showcase_notebooks/Simillie/input_data/counts_norm.csv.gz
 docs/showcase_notebooks/Lasry/input_data/counts_norm.csv.gz
+docs/showcase_notebooks/Lasry/input_data/anno_cells_norm.txt
+docs/showcase_notebooks/Lasry/input_data/anno_samples_norm.txt
+docs/showcase_notebooks/Lasry/input_data/anno_genes_norm.txt
+
+docs/showcase_notebooks/Simillie/input_data/anno_cells_norm.txt
+docs/showcase_notebooks/Simillie/input_data/anno_samples_norm.txt
+docs/showcase_notebooks/Simillie/input_data/anno_genes_norm.txt
+
+docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_cells_corr.txt
+docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_genes_corr.txt
+docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_samples_corr.txt
