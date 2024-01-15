@@ -32,3 +32,9 @@ docs/showcase_notebooks/Simillie/input_data/anno_genes_norm.txt
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_cells_corr.txt
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_genes_corr.txt
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_samples_corr.txt
+docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
+docs/showcase_notebooks/Simillie/input_data/counts_norm.csv.gz
+docs/showcase_notebooks/Simillie/computed_results/community_anno_interactions.csv
+docs/showcase_notebooks/Simillie/computed_results/interactions.RData
+.git/objects/pack/pack-9e89f91f5499981738a60696a2fc7e6f811a7c69.pack
+.git/objects/pack/tmp_pack_09e9UV
