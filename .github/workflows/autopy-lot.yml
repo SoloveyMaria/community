@@ -11,4 +11,5 @@ jobs:
         uses: deep5050/autopy-lot@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
+          input_types: ipynb
           output_dir: './autopy-lot/'
