@@ -66,7 +66,7 @@ download-vangalen_oetjen: ## download preprocessed data
 	curl https://zenodo.org/records/10013368/files/anno_samples_corr.txt -o docs/showcase_notebooks/vanGalen_Oetjen/input_data/anno_samples_corr.txt;
 	curl https://zenodo.org/records/10013368/files/anno_genes_corr.txt -o docs/showcase_notebooks/vanGalen_Oetjen/input_data/anno_genes_corr.txt;
 	curl https://zenodo.org/records/10013368/files/counts_corr.csv.gz -o docs/showcase_notebooks/vanGalen_Oetjen/input_data/counts_corr.csv.gz
-.PHONY: download-vangalen
+.PHONY: vangalen_oetjen
 
 download-simillie: ## download preprocessed data
 	curl https://zenodo.org/records/10512663/files/anno_cells_norm.txt -o docs/showcase_notebooks/Simillie/input_data/anno_cells_norm.txt;
