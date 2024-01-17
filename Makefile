@@ -61,11 +61,11 @@ download-lasry: ## download preprocessed data
 	curl https://zenodo.org/records/10513005/files/counts_norm.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_norm.csv.gz
 .PHONY: download-lasry
 
-download-vangalen: ## download preprocessed data
-	curl https://zenodo.org/records/10013368/files/anno_cells_corr.txt -o docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_cells_corr.txt;
-	curl https://zenodo.org/records/10013368/files/anno_samples_corr.txt -o docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_samples_corr.txt;
-	curl https://zenodo.org/records/10013368/files/anno_genes_corr.txt -o docs/showcase_notebooks/vanGalen_Hourigan/input_data/anno_genes_corr.txt;
-	curl https://zenodo.org/records/10013368/files/counts_corr.csv.gz -o docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
+download-vangalen_oetjen: ## download preprocessed data
+	curl https://zenodo.org/records/10013368/files/anno_cells_corr.txt -o docs/showcase_notebooks/vanGalen_Oetjen/input_data/anno_cells_corr.txt;
+	curl https://zenodo.org/records/10013368/files/anno_samples_corr.txt -o docs/showcase_notebooks/vanGalen_Oetjen/input_data/anno_samples_corr.txt;
+	curl https://zenodo.org/records/10013368/files/anno_genes_corr.txt -o docs/showcase_notebooks/vanGalen_Oetjen/input_data/anno_genes_corr.txt;
+	curl https://zenodo.org/records/10013368/files/counts_corr.csv.gz -o docs/showcase_notebooks/vanGalen_Oetjen/input_data/counts_corr.csv.gz
 .PHONY: download-vangalen
 
 download-simillie: ## download preprocessed data
