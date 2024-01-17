@@ -111,7 +111,7 @@ test_diff <- function(comm_result
         if(verbose){print(paste("We have"
                                 ,sum(anno_interactions$sign
                                      ,na.rm = TRUE)
-                                ,"dignificantly differential interactions"
+                                ,"significantly differential interactions"
         )
         )
         }
