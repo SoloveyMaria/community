@@ -89,7 +89,7 @@ You can download the preprocessed data by running the below command. You can als
 - Download preprocessed data by running the following code on the terminal. Windows users can double click on `download_data.bat` to download all the preprocessed data to run the showcase notebooks. The downloaded data will be located at `docs/showcase_notebooks/$dataset/input_files/` 
         - to download Lasry dataset directly into the corresponding directory, you can run `make download-lasry` or you can simply visit [the zenodo page here](https://zenodo.org/records/10513005) to download manually and place them into the related directory.
         - For simillie, `make download-simillie` or visit [zenodo link](https://zenodo.org/records/10512663). 
-        - For integrated VanGalen-Oetjen, `make download-vangalen` or visit [zenodo link](https://zenodo.org/records/10013368).
+        - For integrated VanGalen-Oetjen, `make download-vangalen_oetjen` or visit [zenodo link](https://zenodo.org/records/10013368).
 
 
     
