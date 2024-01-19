@@ -31,3 +31,7 @@ dependencies:
 - matplotlib
 - scipy
 - r-eulerr
+- bio- r-eulerr
+- bioconductor-omnipathr
+- bioconductor-mygeneconductor-omnipathr
+- bioconductor-mygene

@@ -27,36 +27,36 @@
 #' @export
 
 import_db <- function(db_type = c("noncurated", "curated", "both")) {
-  db_type <- match.arg(db_type)
+    db_type <- match.arg(db_type)
 
-  if (db_type %in% c("noncurated", "both")) {
-    non_curated <- import_ligrecextra_interactions()
-    non_curated <- non_curated %>% filter(!duplicated(non_curated[, c("source_genesymbol", "target_genesymbol")]))
-    non_curated$Pair.Name <- paste(non_curated$source_genesymbol, non_curated$target_genesymbol, sep = "_")
-    non_curated$annotation_strategy <- "LR"
+    if (db_type %in% c("noncurated", "both")) {
+        non_curated <- import_ligrecextra_interactions()
+        non_curated <- non_curated %>% filter(!duplicated(non_curated[, c("source_genesymbol", "target_genesymbol")]))
+        non_curated$Pair.Name <- paste(non_curated$source_genesymbol, non_curated$target_genesymbol, sep = "_")
+        non_curated$annotation_strategy <- "LR"
   }
 
-  if (db_type %in% c("curated", "both")) {
-    curated <- curated_ligand_receptor_interactions()
-    curated <- curated %>% filter(!duplicated(curated[, c("source_genesymbol", "target_genesymbol")]))
-    curated$Pair.Name <- paste(curated$source_genesymbol, curated$target_genesymbol, sep = "_")
-    curated$annotation_strategy <- "curated"
+    if (db_type %in% c("curated", "both")) {
+        curated <- curated_ligand_receptor_interactions()
+        curated <- curated %>% filter(!duplicated(curated[, c("source_genesymbol", "target_genesymbol")]))
+        curated$Pair.Name <- paste(curated$source_genesymbol, curated$target_genesymbol, sep = "_")
+        curated$annotation_strategy <- "curated"
   }
 
-  if (db_type == "both") {
+    if (db_type == "both") {
     non_curated <- non_curated %>%
       mutate(annotation_strategy = ifelse(Pair.Name %in% curated$Pair.Name, "both", annotation_strategy))
 
     combined_db <- rbind(non_curated, curated)
-    combined_db <- combined_db[!duplicated(combined_db$Pair.Name), ]
+#     combined_db <- combined_db[!duplicated(combined_db$Pair.Name), ]
 
-    print("Number of pairs found")
+    cat("Retrieved interactions from", db_type, "DB")
     return(combined_db)
-  } else if (db_type == "noncurated") {
+    } else if (db_type == "noncurated") {
     return(non_curated)
-  } else if (db_type == "curated") {
+    } else if (db_type == "curated") {
     return(curated)
-  }
+    }
 }
 
 
@@ -91,7 +91,7 @@ create_pairwise_pairs <- function(both_db) {
     # Filter for complex rows
     complex <- both_db %>% 
                filter(str_detect(target, "COMPLEX") | str_detect(source, "COMPLEX"))
-
+    cat(nrow(complex), " Number of complex pairs detected")
     # Remove pair column if exists
     complex$Pair.Name <- NULL
 
@@ -120,7 +120,7 @@ create_pairwise_pairs <- function(both_db) {
     # Combine all results
     results <- do.call(rbind, results_list)
     results$Pair.Name <- paste(results$Ligand, results$Receptor, sep = "_")
-
+    cat(nrow(results), " Number of non-redundant binary pairs produced")
     return(results[, c("Pair.Name", names(results)[!names(results) %in% "Pair.Name"])])
 }
 
@@ -142,6 +142,7 @@ create_pairwise_pairs <- function(both_db) {
 #' filtered_pairs <- filter_pairs_with_ppi(pairwise_pairs)
 
 # Function to filter pairwise pairs based on PPI network
+# Function to filter pairwise pairs based on PPI network
 filter_pairs_with_ppi <- function(pairwise_pairs) {
 
     # Import all PPI
@@ -153,34 +154,34 @@ filter_pairs_with_ppi <- function(pairwise_pairs) {
     pt_interactions <- pairwise_pairs %>%
         filter(Pair.Name %in% ppi_network$Pair.Name) %>%
         distinct(Pair.Name, .keep_all = TRUE)
-
+    cat(nrow(pt_interactions), " Number of binary pairs detected through PPI")
     return(pt_interactions)
 }
 
 
-#' Process Single Component Interactions
+#' Process Binary Pairs
 #'
 #' This function processes the single component interactions from a combined ligand-receptor database and merges them with PPI interactions.
 #'
 #' @param both_db A data frame of combined ligand-receptor interactions.
 #' @param pt_interactions A data frame of post-translational interactions.
 #'
-#' @return A data frame of merged single component and post-translational interactions, without duplicates.
+#' @return A data frame of merged binary pairs and interactions filtered through PPI, without duplicates.
 #'
 #' @usage
-#' process_single_components(both_db, pt_interactions)
+#' process_binary_pairs(both_db, pt_interactions)
 #'
 #' @examples
 #' both_db <- import_db("both")
 #' pairwise_pairs <- create_pairwise_pairs(both_db)
 #' pt_interactions <- filter_pairs_with_ppi(pairwise_pairs)
 #' # Assuming 'both_db' and 'pt_interactions' are available data frames
-#' complete_interactions <- process_single_components(both_db, pt_interactions)
+#' complete_interactions <- process_binary_pairs(both_db, pt_interactions)
 #'
 #' @export
 
 
-process_single_components <- function(both_db, pt_interactions) {
+process_binary_pairs <- function(both_db, pt_interactions) {
     # Filter out single components
     single_components <- filter(both_db, !grepl('COMPLEX', target) & !grepl('COMPLEX', source))
     single_components$pair <- NULL  # Remove pair column
@@ -211,7 +212,7 @@ process_single_components <- function(both_db, pt_interactions) {
     # Merge single components with PT interactions and drop duplicates
     complete <- rbind(single_components, pt_interactions)
     complete <- complete[!duplicated(complete$Pair.Name, fromLast = TRUE),]
-
+    cat(nrow(complete), " Non-redundant number of pairs in the DB")
     return(complete)
 }
 
