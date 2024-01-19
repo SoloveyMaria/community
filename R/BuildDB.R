@@ -50,7 +50,7 @@ import_db <- function(db_type = c("noncurated", "curated", "both")) {
     combined_db <- rbind(non_curated, curated)
 #     combined_db <- combined_db[!duplicated(combined_db$Pair.Name), ]
 
-    cat("Retrieved interactions from", db_type, "DB")
+    print(paste0("Retrieved interactions from ", db_type, " DB"))
     return(combined_db)
     } else if (db_type == "noncurated") {
     return(non_curated)
@@ -91,7 +91,7 @@ create_pairwise_pairs <- function(both_db) {
     # Filter for complex rows
     complex <- both_db %>% 
                filter(str_detect(target, "COMPLEX") | str_detect(source, "COMPLEX"))
-    cat(nrow(complex), " Number of complex pairs detected")
+    print(paste0(nrow(complex), " Number of complex pairs detected"))
     # Remove pair column if exists
     complex$Pair.Name <- NULL
 
@@ -120,7 +120,7 @@ create_pairwise_pairs <- function(both_db) {
     # Combine all results
     results <- do.call(rbind, results_list)
     results$Pair.Name <- paste(results$Ligand, results$Receptor, sep = "_")
-    cat(nrow(results), " Number of non-redundant binary pairs produced")
+    print(paste0(nrow(results), " Number of non-redundant binary pairs produced"))
     return(results[, c("Pair.Name", names(results)[!names(results) %in% "Pair.Name"])])
 }
 
@@ -154,7 +154,7 @@ filter_pairs_with_ppi <- function(pairwise_pairs) {
     pt_interactions <- pairwise_pairs %>%
         filter(Pair.Name %in% ppi_network$Pair.Name) %>%
         distinct(Pair.Name, .keep_all = TRUE)
-    cat(nrow(pt_interactions), " Number of binary pairs detected through PPI")
+    print(paste0(nrow(pt_interactions), " Number of binary pairs detected through PPI"))
     return(pt_interactions)
 }
 
@@ -212,7 +212,7 @@ process_binary_pairs <- function(both_db, pt_interactions) {
     # Merge single components with PT interactions and drop duplicates
     complete <- rbind(single_components, pt_interactions)
     complete <- complete[!duplicated(complete$Pair.Name, fromLast = TRUE),]
-    cat(nrow(complete), " Non-redundant number of pairs in the DB")
+    print(paste0(nrow(complete), " Non-redundant number of pairs in the DB"))
     return(complete)
 }
 
@@ -619,7 +619,7 @@ auto_update_db <- function(db_type) {
     print("Number of PPI network interactions found:")
     print(nrow(pt_interactions))
 
-    complete_data <- process_single_components(db, pt_interactions)
+    complete_data <- process_binary_pairs(db, pt_interactions)
     complete_data <- map_gene_data(complete_data)
     annotation <- annotate_components(complete_data)
     true_LR_DB <- process_lr_db(complete_data, annotation)
