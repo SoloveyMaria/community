@@ -55,10 +55,10 @@ create-env: ## create conda environment
 .PHONY: create-env
 
 download-lasry: ## download preprocessed data
-	curl https://zenodo.org/records/10513005/files/anno_cells_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_norm.txt;
-	curl https://zenodo.org/records/10513005/files/anno_samples_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_samples_norm.txt;
-	curl https://zenodo.org/records/10513005/files/anno_genes_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_genes_norm.txt;
-	curl https://zenodo.org/records/10513005/files/counts_norm.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_norm.csv.gz
+	curl https://zenodo.org/records/10619771/files/anno_cells_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_norm.txt;
+	curl https://zenodo.org/records/10619771/files/anno_samples_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_samples_norm.txt;
+	curl https://zenodo.org/records/10619771/files/anno_genes_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_genes_norm.txt;
+	curl https://zenodo.org/records/10619771/files/counts_lognorm.csv.gz -o docs/showcase_notebooks/Lasry/input_data/counts_lognorm.csv.gz
 .PHONY: download-lasry
 
 download-vangalen_oetjen: ## download preprocessed data

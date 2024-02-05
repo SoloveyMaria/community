@@ -84,10 +84,10 @@ Please ensure that you have the necessary permissions to run the ```install_wind
     
 ### Getting preprocessed data
 
-You can download the preprocessed data by running the below command. You can also visit the link here [https://zenodo.org/record/10513005](https://zenodo.org/records/10513005) and download manually. In order to run the notebook workflow with the preprocessed data, the files should be under the /docs/showcase_notebooks directory. 
+You can download the preprocessed data by running the below command. You can also visit the link here [https://zenodo.org/record/10619771](https://zenodo.org/records/10619771) and download manually. In order to run the notebook workflow with the preprocessed data, the files should be under the /docs/showcase_notebooks directory. 
 
 - Download preprocessed data by running the following code on the terminal. Windows users can double click on `download_data.bat` to download all the preprocessed data to run the showcase notebooks. The downloaded data will be located at `docs/showcase_notebooks/$dataset/input_files/` 
-        - to download Lasry dataset directly into the corresponding directory, you can run `make download-lasry` or you can simply visit [the zenodo page here](https://zenodo.org/records/10513005) to download manually and place them into the related directory.
+        - to download Lasry dataset directly into the corresponding directory, you can run `make download-lasry` or you can simply visit [the zenodo page here](https://zenodo.org/records/10619771) to download manually and place them into the related directory.
         - For simillie, `make download-simillie` or visit [zenodo link](https://zenodo.org/records/10512663). 
         - For integrated VanGalen-Oetjen, `make download-vangalen_oetjen` or visit [zenodo link](https://zenodo.org/records/10013368).
 
