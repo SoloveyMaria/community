@@ -50,3 +50,9 @@ docs/showcase_notebooks/Lasry/input_data/counts_norm.csv.gz
 docs/showcase_notebooks/Lasry/input_data/counts_norm_log_transformed.csv.gz
 docs/showcase_notebooks/Lasry/input_data/delogged_counts.csv.gz
 .git/objects/pack/pack-bd7e829e1ead964fe2eca788619951f6316ee7c1.pack
+docs/showcase_notebooks/vanGalen_Oetjen/input_data/counts_corr.csv.gz
+docs/showcase_notebooks/Lasry/input_data/counts_lognorm.csv.gz
+docs/showcase_notebooks/Lasry/input_data/counts_norm.csv.gz
+docs/showcase_notebooks/Lasry/input_data/counts_norm_log_transformed.csv.gz
+docs/showcase_notebooks/Lasry/input_data/delogged_counts.csv.gz
+.git/objects/pack/pack-bd7e829e1ead964fe2eca788619951f6316ee7c1.pack
