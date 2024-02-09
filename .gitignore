@@ -1,4 +1,4 @@
-omnipathr-log
+omnipathr-log/
 .ipynb_checkpoints
 .git/objects/pack/pack-21aca1fcc96780b2a53472a9b408ff63a129d8d5.pack
 docs/showcase_notebooks/vanGalen_Hourigan/input_data/counts_corr.csv.gz
