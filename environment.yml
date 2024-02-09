@@ -1,4 +1,4 @@
-name: community_tutorial
+name: community
 channels:
 - conda-forge
 - bioconda
@@ -31,7 +31,6 @@ dependencies:
 - matplotlib
 - scipy
 - r-eulerr
-- bio- r-eulerr
-- bioconductor-omnipathr
-- bioconductor-mygeneconductor-omnipathr
-- bioconductor-mygene
+- bioconda::bioconductor-mygene
+- r-ggalluvial
+- bioconda::mygene

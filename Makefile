@@ -1,5 +1,5 @@
 # Settings
-CONDA_ENV=community_tutorial
+CONDA_ENV=community
 SHELL=bash
 MINICONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
@@ -45,12 +45,22 @@ install-conda: ## install Miniconda
 create-env: ## create conda environment
 	if ${CONDA} env list | grep ${CONDA_ENV}; then \
 	   mamba env update -n ${CONDA_ENV} -f environment.yml; \
-	   source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
+	    echo "Activating new environment and installing R packages"; \
+	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); q()' && \
+	    echo "Installing OmnipathR from GitHub"; \
+	    R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("prettyunits"); devtools::install_github("saezlab/OmnipathR@v3.7.0"); q()' && \
+	    echo "Installing community package from GitHub"; \
+	    R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
 	else \
 	    ${CONDA} install -n base -c conda-forge mamba && \
 	    source ${ACTIVATE} base && \
 	    mamba env create -f environment.yml && \
-	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
+	    echo "Activating new environment and installing R packages"; \
+	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); q()' && \
+	    echo "Installing OmnipathR from GitHub"; \
+	    R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("prettyunits"); devtools::install_github("saezlab/OmnipathR@v3.7.0"); q()' && \
+	    echo "Installing community package from GitHub"; \
+	    R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
 	fi
 .PHONY: create-env
 
