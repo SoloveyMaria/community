@@ -28,23 +28,25 @@ if %errorlevel% neq 0 (
     call conda init cmd.exe
 )
 
-rem Check if community_tutorial environment exists
-conda env list | findstr /R /C:"\bcommunity_tutorial\b" >nul 2>&1
+rem Check if community environment exists
+conda env list | findstr /R /C:"\bcommunity\b" >nul 2>&1
 if %errorlevel% equ 0 (
-    rem If community_tutorial environment exists, run Jupyter Notebook
-    echo community_tutorial environment exists. Running Jupyter Notebook...
-    call conda activate community_tutorial
+    rem If community environment exists, run Jupyter Notebook
+    echo community environment exists. Running Jupyter Notebook...
+    call conda activate community
     jupyter notebook
     call conda deactivate
 ) else (
-    rem If community_tutorial environment does not exist, create it from environment.yml
-    echo community_tutorial environment does not exist. Creating...
+    rem If community environment does not exist, create it from environment.yml
+    echo community environment does not exist. Creating...
     call conda activate
     conda install -c conda-forge mamba
     mamba env create -f environment.yml
     call conda deactivate
-    call conda activate community_tutorial
-    Rscript -e "devtools::install_github('SoloveyMaria/community', upgrade = 'always')"
+    call conda activate community
+    R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); q()'
+    R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("prettyunits"); devtools::install_github("saezlab/OmnipathR@v3.7.0"); q()'
+    R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'
     jupyter notebook
     call conda deactivate
 )
