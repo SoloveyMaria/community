@@ -1,6 +1,22 @@
 A brief description of the workflow for building the Ligand-Receptor database for community tool
 ========
 
+### TL;DR
+The community tool requires three columns: "Pair.Name", "Ligand", and "Receptor". Users can add their own pairs to these respective columns. The original database in CSV format is also provided in the [extdata directory.](https://github.com/SoloveyMaria/community/tree/main/extdata)
+
+To follow our procedures for building or updating the database, you need to install `OmnipathR` and the `mygene` library. You can install them using the following code snippets: 
+
+```R 
+devtools::install_github("saezlab/OmnipathR@v3.7.0")
+```
+
+```R 
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("mygene")
+```
+
 ### Construction of the database
 
 There are various databases for biological interactions due to the diverse nature of molecular interactions such as Ligand-Receptor, Enzyme-Substrate, Protein Protein Interactions (PPI) and cell-cell adhesion molecules. Each of these interactions plays a crucial role in biological processes. However, the challenge arises from the differing data formats, coverage, and quality among these databases. We carefully considered several factors to address these challenges to build a comprehensive and reliable database. We needed a database that could offer a wide range of biological interactions, integrate data from various sources and maintain high standards of data quality and coverage. For example, we cross-referenced the interactions with various sources to remove the inaccurate, ensuring that only interactions supported by multiple sources were included into the database (consistency). Additionally, prioritizing interactions that are particularly relevant to intercellular communication processes, filtering out noise and irrelevant entries. 

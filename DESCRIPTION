@@ -14,7 +14,6 @@ Imports:
     ggplot2 (>= 3.3.0),
     gridExtra (>= 2.1),
     stringr (>= 1.4.0),
-    stringr,
     tidyverse
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
