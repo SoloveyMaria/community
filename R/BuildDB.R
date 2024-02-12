@@ -10,7 +10,6 @@
 #' @return Depending on the selected database type, this function returns either a dataframe
 #'         of non-curated interactions, curated interactions, or a combined dataframe of both.
 #'         If "both" is selected, it also provides a count of interaction pairs by their annotation strategy.
-#' @importFrom OmnipathR import_ligrecextra_interactions curated_ligand_receptor_interactions import_post_translational_interactions
 #' @import dplyr
 #' @import tidyverse
 #'
@@ -235,7 +234,6 @@ process_binary_pairs <- function(both_db, pt_interactions) {
 #' complete_mapped <- map_gene_data(complete)
 #'
 #' @export
-#' @importFrom mygene queryMany
 #' @importFrom stringr str_replace
 
 
@@ -291,7 +289,6 @@ map_gene_data <- function(complete) {
 #'
 #' @return A data frame with columns 'genesymbol', 'score', and 'parent', where 'parent' indicates the parent category of the gene
 #'
-#' @importFrom OmnipathR import_omnipath_intercell
 #' @importFrom dplyr filter
 #'
 #' @usage
