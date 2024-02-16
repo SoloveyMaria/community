@@ -1,6 +1,6 @@
 Package: community
 Title: Infer interactions between cell types
-Version: 1.4.1
+Version: 1.4.2
 Authors@R: 
     person("Maria", "Solovey", , "maria.solovey@bmc.med.lmu.de", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
@@ -21,4 +21,4 @@ Suggests:
     roxygen2,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
