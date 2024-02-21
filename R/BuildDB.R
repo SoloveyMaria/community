@@ -1,5 +1,5 @@
 #' Import Ligand-Receptor Interaction Databases
-#'
+#' Requires mygene and OmnipathR libraries to be loaded. 
 #' This function imports ligand-receptor interaction data, with options to select from non-curated, curated, or both types of databases. It processes the data to avoid duplicates and provides unified formatting.
 #'
 #' @param db_type A character vector specifying the type of database to import.
