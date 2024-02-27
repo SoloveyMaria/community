@@ -7,7 +7,7 @@ The community tool requires three columns: "Pair.Name", "Ligand", and "Receptor"
 To follow our procedures for building or updating the database, you need to install `OmnipathR` and the `mygene` library. You can install them using the following code snippets: 
 
 ```R 
-devtools::install_github("saezlab/OmnipathR@v3.7.0")
+devtools::install_github("saezlab/OmnipathR")
 ```
 
 ```R 
@@ -16,6 +16,21 @@ if (!require("BiocManager", quietly = TRUE))
 
 BiocManager::install("mygene")
 ```
+
+Auto-updating the database
+
+```R 
+library(community) # load community package
+library(mygene)
+library(OmnipathR)
+
+
+LR_database <- auto_update_db("both") 
+```
+
+If you wish to update the database and intervene during the processes where you provide your annotations, you can follow the guidelines outlined in the [Basic.ipynb](./Basic.ipynb) file. For more advanced users, detailed code functions are provided in the [Advanced section](Advanced.ipynb), along with comprehensive explanations of their purposes.
+
+In the following section, we delve into our workflow logic, providing detailed insights.
 
 ### Construction of the database
 
