@@ -11,15 +11,20 @@ In this repository, you'll find:
 
 # The `community` tool is a powerful tool with several benefits:
 
-1.  **Compensatory Mechanism Analysis:** Another important aspect offered by the tool is the ability to analyze compensatory mechanisms. Compensatory mechanisms refer to the ways in which cells or organisms compensate for changes or disruptions in a biological process. By using the tool, you can explore and gain insights into the compensatory mechanisms employed by the components in your dataset.
+1. **Differential Communication Analysis:** One of the key capabilities of the "community" is its ability to perform differential communication analysis between cohorts of case and control samples using scRNAseq data. This feature enables the identification of communication differences that may underlie various biological conditions or disease states.
 
-2.  **Speed and Efficiency:** `community` is built for speed, making it suitable for large-scale scRNAseq datasets without high computational demands.
-3.  **Robustness:** Our tool employs rigorous statistical methods along with multi-factor analysis to ensure the reliability of the results. This makes it less sensitive to outlier samples, providing more accurate differential communication analysis.
-4.  **Intuitive Visualization:** The tool offers straightforward graphical outputs, simplifying the understanding of complex cell interactions.
-5.  **User-Friendly:** With an easy-to-use workflow and detailed documentation, the tool is designed for users of varying technical backgrounds.
+2.  **Compensatory Mechanism Analysis:** Another important aspect offered by the tool is the ability to analyze compensatory mechanisms. Compensatory mechanisms refer to the ways in which cells or organisms compensate for changes or disruptions in a biological process. 
+
+3.  **Speed and Efficiency:** `community` is built for speed, making it suitable for large-scale scRNAseq datasets without high computational demands.
+
+4.  **Robustness:** Our tool employs rigorous statistical methods along with multi-factor analysis to ensure the reliability of the results. This makes it less sensitive to outlier samples, providing more accurate differential communication analysis.
+
+5.  **Intuitive Visualization:** The tool offers straightforward graphical outputs, simplifying the understanding of complex cell interactions.
+
+6.  **User-Friendly:** With an easy-to-use workflow and detailed documentation, the tool is designed for users of varying technical backgrounds.
 
 
-## Installation
+# Installation
 If you are not fimilar with the below code, please follow the next steps to install. We have created a script for Windows users to automatically install all the necesary components (`install_windows.bat`). 
 
 ```r
@@ -81,8 +86,11 @@ Please ensure that you have the necessary permissions to run the ```install_wind
     
 - Open:
     - [`src/calculate_communication.ipynb` Notebook](http://localhost:8888/notebooks/src/extract_data_from_website.ipynb) to run the demo workflow.
-    
-### Getting preprocessed data
+
+# Custom Database
+In `community`, database is managed through a comma-separated file, requiring three mandatory columns(`Pair.Name`, `Ligand` and `Receptor`). Users can easily incorporate their own pairs by editing the provided [.csv file.](https://github.com/SoloveyMaria/community/blob/main/extdata/LR_database.csv) For instructions on updating the database or customization using our workflow, detailed information is available [here.](https://github.com/SoloveyMaria/community/tree/main/docs/DB_building)
+
+# Getting preprocessed data
 
 You can download the preprocessed data by running the below command. You can also visit the link here [https://zenodo.org/record/10619771](https://zenodo.org/records/10619771) and download manually. In order to run the notebook workflow with the preprocessed data, the files should be under the /docs/showcase_notebooks directory. 
 
@@ -105,18 +113,18 @@ For each dataset, we provide tailored preprocessing workflows. These workflows e
 
 For a comprehensive overview of our preprocessing steps, please follow this [link](https://github.com/colomemaria/community-paper/tree/main/src/data_preprocessing).
     
-## Documentation
+# Documentation
 
 To learn using `community`, read one of the following vignettes:
 
 Following vignette contains the explanation on how to perform a basic communication, QC, and differential communication analysis. This includes guidelines on data preprocessing, running the main analysis functions, and interpreting the results. This analysis takes only a few minutes to run: 
-- [community analysis on Lasry dataset: ](vignettes/calculate_communication_lasry/calculate_communication.md)
+- [community analysis on Lasry dataset: ](https://github.com/SoloveyMaria/community/blob/main/docs/showcase_notebooks/Lasry/calculate_communication.ipynb)
 
 If you want to make a comprehensive plots visualization of the community output, you can check following vignettes:
 
-- [community visualization on Lasry dataset: ](vignettes/visualization_lasry/visualization.md)
+- [community visualization on Lasry dataset: ](https://github.com/SoloveyMaria/community/blob/main/docs/showcase_notebooks/Lasry/visualization.ipynb)
 
-## FAQ:
+# FAQ:
 
 #### How to Choose the Right Seurat Data Slot for Input Count Matrix?
 
@@ -150,9 +158,6 @@ For more details on filtering based on these criteria that we used, refer to the
 
 We welcome contributions from other developers. To contribute to community, please fork the repository, make your changes and submit a pull request.
 
-## Contact
-
-If you have any questions or suggestions, please contact me at maria.solovey@bmc.med.lmu.de
 
 ## Cite the tool
 
