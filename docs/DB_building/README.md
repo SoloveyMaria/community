@@ -27,6 +27,7 @@ library(OmnipathR)
 
 LR_database <- auto_update_db("both") 
 ```
+**Disclaimer:** Our database excludes swapped pair duplicates (e.g., L1_R1 and R1_L1) to maintain statistical integrity. We include only one of these pairs. Our method involves checking for the existence of a pair in the Protein-Protein Interaction (PPI) database and cross-referencing other databases for consensus direction. If these steps fail, we default to alphabetical order and designate the pair as an adhesive molecule under the "True_LR" column.
 
 If you wish to update the database and intervene during the processes where you provide your annotations, you can follow the guidelines outlined in the [Basic.ipynb](./Basic.ipynb) file. For more advanced users, detailed code functions are provided in the [Advanced section](Advanced.ipynb), along with comprehensive explanations of their purposes.
 
