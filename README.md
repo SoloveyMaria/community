@@ -154,9 +154,15 @@ For more details on filtering based on these criteria that we used, refer to the
 
 **A:** No special annotation is required for malignant B cells. You can categorize them under the general "B cell" type. The algorithm will distinguish between the two populations through the "active fraction" component, effectively capturing the nuances.
 
-## Contribution
 
-We welcome contributions from other developers. To contribute to community, please fork the repository, make your changes and submit a pull request.
+## Contribution to community
+
+We welcome contributions from the community! If you're interested in contributing to the project, there are a couple of ways you can get involved:
+
+- Fork and Merge: Feel free to fork the repository, make your changes, and then submit a pull request to merge your changes back into the main branch.
+
+
+- Open an Issue: If you have ideas for improvements, feature requests, or encounter any bugs, please open an issue on the repository. This helps us keep track of community feedback and prioritize development efforts.
 
 
 ## Cite the tool
