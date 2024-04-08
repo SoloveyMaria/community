@@ -2,7 +2,9 @@
 % Please edit documentation in R/BuildDB.R
 \name{import_db}
 \alias{import_db}
-\title{Import Ligand-Receptor Interaction Databases}
+\title{Import Ligand-Receptor Interaction Databases
+Requires mygene and OmnipathR libraries to be loaded.
+This function imports ligand-receptor interaction data, with options to select from non-curated, curated, or both types of databases. It processes the data to avoid duplicates and provides unified formatting.}
 \usage{
 import_db(db_type = c("noncurated", "curated", "both"))
 }
@@ -18,6 +20,8 @@ of non-curated interactions, curated interactions, or a combined dataframe of bo
 If "both" is selected, it also provides a count of interaction pairs by their annotation strategy.
 }
 \description{
+Import Ligand-Receptor Interaction Databases
+Requires mygene and OmnipathR libraries to be loaded.
 This function imports ligand-receptor interaction data, with options to select from non-curated, curated, or both types of databases. It processes the data to avoid duplicates and provides unified formatting.
 }
 \examples{
