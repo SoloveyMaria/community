@@ -1,6 +1,6 @@
 Package: community
 Title: Infer interactions between cell types
-Version: 1.4.3
+Version: 1.4.4
 Authors@R: 
     person("Maria", "Solovey", , "maria.solovey@bmc.med.lmu.de", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))

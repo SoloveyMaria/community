@@ -87,6 +87,12 @@ Please ensure that you have the necessary permissions to run the ```install_wind
 - Open:
     - [`src/calculate_communication.ipynb` Notebook](http://localhost:8888/notebooks/src/extract_data_from_website.ipynb) to run the demo workflow.
 
+# Mouse Database
+
+We have converted the human gene symbols in the database, using their entrez ids and the MGI mouse gene symbols and entrez ids of the one-one orthologs as determined via NCBI's homologene db and biomaRt ensembl db.
+
+This database can be loaded as `data(LR_database_mouse)`, additionally it is also provided as [.csv file.](https://github.com/SoloveyMaria/community/blob/main/extdata/LR_database_mouse.csv)
+
 # Custom Database
 In `community`, database is managed through a comma-separated file, requiring three mandatory columns(`Pair.Name`, `Ligand` and `Receptor`). Users can easily incorporate their own pairs by editing the provided [.csv file.](https://github.com/SoloveyMaria/community/blob/main/extdata/LR_database.csv) For instructions on updating the database or customization using our workflow, detailed information is available [here.](https://github.com/SoloveyMaria/community/tree/main/docs/DB_building)
 
