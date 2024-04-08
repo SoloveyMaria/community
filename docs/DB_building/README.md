@@ -31,6 +31,13 @@ LR_database <- auto_update_db("both")
 
 If you wish to update the database and intervene during the processes where you provide your annotations, you can follow the guidelines outlined in the [Basic.ipynb](./Basic.ipynb) file. For more advanced users, detailed code functions are provided in the [Advanced section](Advanced.ipynb), along with comprehensive explanations of their purposes.
 
+We recommend to use Advanced section, if you want to:
+
+    * Tailor the database building to your needs
+    * Include resources not available in the public web service of OmniPath
+    * To download data only from your own prefered sources
+    * Make sure the data from the original sources in OmniPath are up to date
+
 In the following section, we delve into our workflow logic, providing detailed insights.
 
 ### Construction of the database
