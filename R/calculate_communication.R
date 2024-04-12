@@ -131,6 +131,14 @@ calculate_communication <- function(counts
                                     ,lrp_database
                                     ,verbose = FALSE){
         
+        
+
+        if(any(grepl("_", anno_cells$cell_type))) {
+          warning("Underscores found in cell_type column, replacing with dashes.")
+          anno_cells$cell_type <- gsub("_", "-", anno_cells$cell_type)
+        }
+
+
         #filter lr database
         lrp_database <- lrp_database[(lrp_database$Ligand %in% rownames(counts)) &
                                              (lrp_database$Receptor %in% rownames(counts)), ]

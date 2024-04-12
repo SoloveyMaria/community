@@ -39,6 +39,12 @@ create_initial_anno_interactions <- function(counts
                                              ,verbose = FALSE
 ){
         if(verbose){print("create initial anno_interactions")}
+
+
+        if(any(grepl("_", anno_cells$cell_type))) {
+          warning("Underscores found in cell_type column, replacing with dashes.")
+          anno_cells$cell_type <- gsub("_", "-", anno_cells$cell_type)
+        }
         
         # define interaction_IDs
         #print("define interaction_IDs")
