@@ -44,7 +44,7 @@ install-conda: ## install Miniconda
 
 create-env: ## create conda environment
 	if ${CONDA} env list | grep ${CONDA_ENV}; then \
-	    mamba env update -y -n ${CONDA_ENV} -f environment.yml; \
+	    mamba env update -n ${CONDA_ENV} -f environment.yml; \
 	    echo "Activating new environment and installing R packages"; \
 	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); install.packages("devtools"); q()' && \
 	    echo "Installing OmnipathR from GitHub"; \
@@ -54,7 +54,7 @@ create-env: ## create conda environment
 	else \
 	    ${CONDA} install -n base -y -c conda-forge mamba && \
 	    source ${ACTIVATE} base && \
-	    mamba env create -y -f environment.yml && \
+	    mamba env create -f environment.yml && \
 	    echo "Activating new environment and installing R packages"; \
 	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); install.packages("devtools"); q()' && \
 	    echo "Installing OmnipathR from GitHub"; \
