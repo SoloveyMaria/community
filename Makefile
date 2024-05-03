@@ -44,25 +44,26 @@ install-conda: ## install Miniconda
 
 create-env: ## create conda environment
 	if ${CONDA} env list | grep ${CONDA_ENV}; then \
-	    mamba env update -n ${CONDA_ENV} -f environment.yml; \
+	    mamba env update -y -n ${CONDA_ENV} -f environment.yml; \
 	    echo "Activating new environment and installing R packages"; \
-	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); q()' && \
+	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); install.packages("devtools"); q()' && \
 	    echo "Installing OmnipathR from GitHub"; \
 	    R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("prettyunits"); devtools::install_github("saezlab/OmnipathR"); q()' && \
 	    echo "Installing community package from GitHub"; \
-	    R -e 'options(timeout=200); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
+	    R -e 'options(timeout=300); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
 	else \
 	    ${CONDA} install -n base -y -c conda-forge mamba && \
 	    source ${ACTIVATE} base && \
 	    mamba env create -y -f environment.yml && \
 	    echo "Activating new environment and installing R packages"; \
-	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); q()' && \
+	    source ${ACTIVATE} ${CONDA_ENV} && R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("BiocManager"); BiocManager::install("metaboliteIDmapping"); install.packages("devtools"); q()' && \
 	    echo "Installing OmnipathR from GitHub"; \
 	    R -e 'options(repos = c(CRAN = "https://cloud.r-project.org/")); install.packages("prettyunits"); devtools::install_github("saezlab/OmnipathR"); q()' && \
 	    echo "Installing community package from GitHub"; \
 	    R -e 'options(timeout=300); devtools::install_github("SoloveyMaria/community", upgrade = "always"); q()'; \
 	fi
 .PHONY: create-env
+
 
 download-lasry: ## download preprocessed data
 	curl https://zenodo.org/records/10619771/files/anno_cells_norm.txt -o docs/showcase_notebooks/Lasry/input_data/anno_cells_norm.txt;
