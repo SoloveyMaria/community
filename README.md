@@ -69,7 +69,7 @@ Please ensure that you have the necessary permissions to run the ```install_wind
     make install-conda
     ```
 
-- Create a conda environment named "community_tutorial" and install all necessary packages by using the following command:
+- Create a conda environment named "community" and install all necessary packages by using the following command:
 
     ```
     make create-env
