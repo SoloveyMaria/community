@@ -98,6 +98,10 @@ In `community`, database is managed through a comma-separated file, requiring th
 
 # Getting preprocessed data
 
+Due to GitHub's file size limitations, if you are interested in using the precomputed results to reproduce the figures from the paper, you can easily download the data, including the weight matrix and interaction annotation table (also available as R objects), from the following Google Drive link:
+
+[Google Drive - Precomputed Results](https://drive.google.com/drive/folders/1C7HnLWNHFwFpljWmDKqKw2r5ZcCNAOYZ?usp=sharing)
+
 You can download the preprocessed data by running the below command. You can also visit the link here [https://zenodo.org/record/10619771](https://zenodo.org/records/10619771) and download manually. In order to run the notebook workflow with the preprocessed data, the files should be under the /docs/showcase_notebooks directory. 
 
 - Download preprocessed data by running the following code on the terminal. Windows users can double click on `download_data.bat` to download all the preprocessed data to run the showcase notebooks. The downloaded data will be located at `docs/showcase_notebooks/$dataset/input_files/` 
