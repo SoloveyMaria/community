@@ -1,0 +1,19 @@
+STANDARD_NAME	BIOCARTA_CTLA4_PATHWAY
+SYSTEMATIC_NAME	M1467
+COLLECTION	C2:CP:BIOCARTA
+MSIGDB_URL	https://www.gsea-msigdb.org/gsea/msigdb/human/geneset/BIOCARTA_CTLA4_PATHWAY
+NAMESPACE	HUMAN_SEQ_ACCESSION
+DESCRIPTION_BRIEF	The Co-Stimulatory Signal During T-cell Activation
+DESCRIPTION_FULL	For a T cell to be activated by a specific antigen, the T cell receptor must recognize complexes of MHCI with the antigen on the surface of an antigen-presenting cell. T cells and the T cell receptor complex do not respond to antigen in solution, but even for the specific antigen they only respond to antigen-MHC-1 complexes on the cell surface. This interaction is necessary for T cell activation, but it is not sufficient. T cell activation also requires a co-stimulatory signal involving interaction of CD28 on the T cell with CD80 or CD86 (B7 family genes) on the antigen-presenting cell. CD28 activates a signal transduction pathway acting through PI-3K, Lck and Grb-2/ITK to provide its co-stimulatory signal for T cell activation. Another means to control T cell activation is by expressing factors that down-regulate T cell activation. Signaling by activated T cell receptors induces expression of CTLA-4, a receptor that opposes T cell activation. CTLA-4 has a higher affinity than CD28 for B7 proteins, terminating T cell activation. ICOS is a protein related to CD28 that is only expressed on activated T cells, and that provides another important co-stimulatory signal. The requirement for co-stimulatory signals provides additional control mechanisms that prevent inappropriate and hazardous T cell activation.
+PMID	
+GEOID	
+AUTHORS	
+CONTRIBUTOR	BioCarta
+CONTRIBUTOR_ORG	BioCarta
+EXACT_SOURCE	
+FILTERED_BY_SIMILARITY	
+EXTERNAL_NAMES_FOR_SIMILAR_TERMS	
+EXTERNAL_DETAILS_URL	https://data.broadinstitute.org/gsea-msigdb/msigdb/biocarta/human/h_ctla4Pathway.gif
+SOURCE_MEMBERS	AI334281,AK021510,BG484513,BM458681,NM_000073,NM_000586,NM_000732,NM_000733,NM_000734,NM_001037631,NM_001040651,NM_001042771,NM_001206924,NM_001206925,NM_001242466,NM_001243077,NM_001243078,NM_001243965,NM_002086,NM_002124,NM_002125,NM_002834,NM_005191,NM_005214,NM_005356,NM_005546,NM_006139,NM_006218,NM_006889,NM_012092,NM_015259,NM_019111,NM_021983,NM_022555,NM_080601,NM_175862,NM_176892,NM_181504,NM_181523,NM_181524,NM_198053,NM_203506
+GENE_SYMBOLS	PIK3R1,PIK3CA,,,CD3G,IL2,CD3D,CD3E,CD247,CTLA4,CD3D,LCK,CD86,CD86,PIK3R1,CD28,CD28,HLA-DRB1,GRB2,HLA-DRB1,HLA-DRB5,PTPN11,CD80,CTLA4,LCK,ITK,CD28,PIK3CA,CD86,ICOS,ICOSLG,HLA-DRA,HLA-DRB4,HLA-DRB3,PTPN11,CD86,CD86,PIK3R1,PIK3R1,PIK3R1,CD247,GRB2
+FOUNDER_NAMES	
