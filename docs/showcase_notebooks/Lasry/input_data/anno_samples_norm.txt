@@ -1,0 +1,60 @@
+	Sample.ID	sex	Age	Sequencing	sample_ID	Institution	Manuscript.ID	Dx	DxELN_Cytogenetic	Cytogenetics	Overall.survival	Flow.report.summary	RAS.pathway	NPM1	IDH	TET2	TP53	RUNX1	CBF	MLL.rearranged	IDH1	IDH2	ASXL1	BCOR	CBL	CEBPAdm	CSF3R	DNMT3A	ETV6	FLT3.TKD	FLT3.ITD	GATA2	JAK2	KIT	NPM1.1	NRAS	KRAS	PTPN11	PHF6	RAD21	RUNX1.1	SETBP1	SMC1A	STAG2	SRSF2	SF3B1	TET2.1	U2AF1	WT1	TP53.1	ZRSR2	health_status	case_or_control	nr_cells_raw	nr_cells_cf	nr_cells_cf_ctf	total_counts_raw_cf_ctf_gf	nr_celltypes_cf_ctf_gf	threshold_nr_celltypes	passed_threshold_nr_celltypes
+0	U-06-0024	M	64	CITE-seq	AML-0024	OSU	AML0024	AML	Adverse	48,XY,+8,+8,i(8)(p10),t(9;15)(q33;q15),del(10)(q22.1q24),del(13)(q14q21)	137.0										0+T2:BL24	0,46	0	0,99	0.0	0.0	0	0	0.0	0,06	0.0	0.0	0.0	0.0	0,17	0.0	0	0,17	0.0	0.0	0	0.0	0.0	0.0	0	0.0	0	0,45	0.0	0	0.0	AML	case	6141	6127	6127	16080180.1293001	8	greater or equal 7	True
+1	U-16-0160	M	74	CITE-seq	AML-0160	OSU	AML0160	AML	Adverse	46,XY[30]	3.0	"Blasts/promonocytes (30%) and monocytes (33%) represent the majority of the differential count of the bone marrow aspirates. Flow cytometric analysis demonstrates 11% CD34 positive myeloid blasts. The findings are those of an acute myeloid leukemia which in the absence of recurrent cytogenetic/molecular abnormalities, is best classified as acute myelomonocytic leukemia. The blasts represent 10.7% of
+the total events analyzed and express CD34+, CD33+, CD13+, HLA-DR+, CD117+
+with subsets expressing CD4 (29.1%), CD8 (12.4%), and CD11b (7.1%)."				x		x			0	0	0,45	0	0.0	0.0	0	0	0.0	0	0.0	0.0	0.0	0.0	0	0.0	0	0	0.0	0.0	0,76	0.0	0.0	0.0	0	0.0	0,43	0	0.0	0	0.0	AML	case	2186	2169	2149	4764255.94405791	7	greater or equal 7	True
+2	U-11-0693	F	77	CITE-seq + scTCR-seq	AML-0693	OSU	AML0693	AML	Adverse	74-89<4n>,XXXX,-8,-9,-9,-12,-17,i(17)(q10),+mar1,+mar2,+dmin[cp18]/46,XX[2] .ish dmin(amp CMYC)	47.0	"Immunohistochemical stains are performed on the bone marrow biopsy for CD34, CD117, CD79a, CD3, MPO, TdT, and CD68 (monocytic marker).  The
+immature cells are positive for MPO, CD68 and CD117.  They are negative for
+the rest stains."					x									0.0				0	0.0				0															mut		AML	case	3604	3385	3353	7218310.15212442	8	greater or equal 7	True
+3	U-18-1371	M	78	CITE-seq	AML-1371	OSU	AML1371	AML		46,XY (17 metas), -Y in 3 metas	631.0	"Blasts, defined by CD45 faint 
+staining and low side scatter represent 72.4 % of the total events 
+analyzed and express CD33+, CD117+ and are negative for the 
+remaining markers. "		x	x						0	0,48	0	0	0.0	0.0	0	0	0.0	0	0.0	0.0	0.0	0.0	0,42	0.0	0	0	0.0	0.0	0	0.0	0.0	0.0	0,47	0.0	0	0	0.0	0	0.0	AML	case	3190	3183	3182	8180661.45346835	8	greater or equal 7	True
+4	U-16-2123	F	71	CITE-seq	AML-2123	OSU	AML2123	AML	Intermediate	46,XX	1807.0	"Immunophenotypic analysis demonstrates an abnormal myeloid 
+HLA-DR+CD13+CD33+CD34+MPO(var)+ myeloblast population, 
+consistent with acute myeloid leukemia. Correlation with bone 
+marrow morphology and cytogenetic studies is recommended. 
+PHENOTYPIC DESCRIPTION: Flow cytometric analysis of bone 
+marrow was performed using a ten color technique with a gating 
+strategy based on CD45 staining and light side scatter 
+characteristics. Lymphocytes represent 23.0 % of the total events 
+analyzed. Of the lymphocytes: 7.0 % are B cells (CD19+) with a 
+Kappa:Lambda ratio of 3:2 , 88.0 % are T cells (CD3+) with a 
+CD4:CD8 ratio of 1.9 and 5.6 % are NK cells (positive for CD56 
+and/or CD16 and negative for CD3). Blasts, defined by CD45 faint 
+staining and low side scatter represent 44.4 % of the total events 
+analyzed and express HLA-DR+, CD13+, CD33+, CD34+ with 
+subpopulation(s) expressing cMPO+ ( 44%) and are negative for 
+the remaining markers analyzed. "			x						0,25	0	0	0	0.0	0.0	0	0	0.0	0	0.0	0.0	0.0	0.0	0	0.0	0	0	0.0	0.0	0	0.0	0.0	0.0	0							AML	case	1333	1278	1265	2819869.57993261	7	greater or equal 7	True
+5	U-16-3133	M	57	CITE-seq	AML-3133	OSU	AML3133	AML	Favorable	46,XY[19]/nonclonal[1]	170.0	"11/4/2016: The amended report includes staining results for cMPO, cCD3, cCD79a, and TdT. The blasts are positive for cMPO. This does not alter the previous diagnosis.   
+SAMPLE TYPE: Bone Marrow 
+LABORATORY INTERPRETATION: 
+Immunophenotypic analysis demonstrates an abnormal myeloid 
+blast population (approximately 8% of total events) with aberrant CD7 expression, consistent with a myeloid neoplasm. Correlation with bone marrow morphology and cytogenetic studies is 
+recommended. The B cells are unremarkable. The T cells have a mildly elevated CD4:CD8 ratio with no significant loss of T cell antigens as can be seen in reactive T cells. 
+PHENOTYPIC DESCRIPTION: Flow cytometric analysis of bone marrow was performed using a ten color technique with a gating strategy based on CD45 staining and light side scatter characteristics. Lymphocytes represent 22.6 % of the total events analyzed. Of the lymphocytes: 11.1 % are B cells (CD19+) with a Kappa:Lambda ratio of 8:5 , 81.6 % are T cells (CD3+) with a 
+CD4:CD8 ratio of 4.7 and 6.6 % are NK cells (positive for CD56 and/or CD16 and negative for CD3). Blasts, defined by CD45 faint staining and low side scatter represent 7.8 % of the total events 
+analyzed and express CD117+, CD13+, HLA DR+, CD7+, CD33+, MPO+ with subpopulatios sexpressing CD4+ (20%), CD34+ (24%), CD65+ (32%) and are negative for the remaining markers 
+analyzed. The monocytes show aberrant expression of CD56/CD16. "	x	x	x						0,3	0	0	0	0.0	0.0	0	0,44	0.0	0	0.0	0.0	0.0	0.0	0,44	0.0	0	"0.05
+0.08"	0.0	0.0	0	0.0	0.0	0.0	0	0.0	0	0	0.0	0	0.0	AML	case	2499	2457	2448	4903210.27518373	8	greater or equal 7	True
+6	U-18-4340	M	80	CITE-seq	AML-4340	OSU	AML4340	AML	Intermediate	46,XY	455.0	"Flow cytometric analysis of bone 
+marrow was performed using a ten color technique with a gating 
+strategy based on CD45 staining and light side scatter 
+characteristics. Lymphocytes represent 56.7 % of the total events 
+analyzed. Of the lymphocytes: 73.2 % are T cells (CD3+) with a 
+CD4:CD8 ratio of 2.3 and 12.0 % are NK cells (positive for CD56 
+and/or CD16 and negative for CD3). The B cells represent 13.5 % 
+of the lymphocytes (8.0 % of the total events analyzed) and 
+express CD19+, CD20+ bright  with subpopulation(s) expressing 
+CD23+(4%). The B cells are essentially negative for CD10 and 
+CD5. Surface immunoglobulin light chains shows a Kappa:Lambda 
+ratio of 13:2 with bright staining intensity. Blasts, defined by CD45 
+faint staining and low side scatter represent 19.6 % of the total 
+events analyzed and express HLA-DR+, CD13+, CD33+, CD34+, 
+CD117+, and are negative for the remaining markers analyzed. "	x		x						0,37	0	0	0	0.0	0.0	0,34	0	0.0	0	0.0	0.0	0.0	0.0	0	0.0	0,24	0	0.0	0.0	0	0.0	0.0	0.0	0	0.0	0	0	0.0	0	0.0	AML	case	2800	2793	2787	6733115.22728632	7	greater or equal 7	True
+7	1	F	26	CITE-Seq	healthy-1																																															healthy	control	2995	2964	2832	6251498.79290104	8	greater or equal 7	True
+8	2	M	39	CITE-Seq	healthy-2																																															healthy	control	2489	2476	2399	5431881.0778559	8	greater or equal 7	True
+9	3	F	50	CITE-Seq	healthy-3																																															healthy	control	4008	3986	3963	8805479.48941174	8	greater or equal 7	True
+10	4	M	20	CITE-Seq	healthy-4																																															healthy	control	5858	5833	5540	12561081.5177718	8	greater or equal 7	True
+11	4003	M	42	CITE-Seq + scTCR-seq	healthy-4003																																															healthy	control	6890	6802	6783	14441581.3459165	8	greater or equal 7	True
+12	5	M	47	CITE-Seq	healthy-5																																															healthy	control	4307	3980	3874	7388398.12692058	8	greater or equal 7	True
